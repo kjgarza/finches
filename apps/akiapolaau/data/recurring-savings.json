@@ -1,0 +1,117 @@
+[
+  {
+    "id": "RAKfgL1cZgjW-pzQx3lv8",
+    "userId": "vNnxFFVb31WmgHFP8Ne_Z",
+    "amount": 2000,
+    "frequency": "weekly",
+    "reinvestmentInstrument": "BONDDIA",
+    "isActive": true,
+    "lastExecutionDate": "2025-12-07",
+    "nextExecutionDate": "2025-12-14",
+    "createdAt": "2025-12-07T14:42:40.154Z",
+    "updatedAt": "2025-12-07T14:42:40.154Z"
+  },
+  {
+    "id": "2DSXGzN3AQ2cmlXE-Xlfq",
+    "userId": "vNnxFFVb31WmgHFP8Ne_Z",
+    "amount": 500,
+    "frequency": "biweekly",
+    "reinvestmentInstrument": "CETES",
+    "isActive": false,
+    "nextExecutionDate": "2025-12-21",
+    "createdAt": "2025-12-07T14:42:40.154Z",
+    "updatedAt": "2025-12-07T14:42:40.154Z"
+  },
+  {
+    "id": "08ddVIUJfCkw3hxtHi0RH",
+    "userId": "1rTk-9NOEetWu7PNpvMyd",
+    "amount": 1000,
+    "frequency": "weekly",
+    "reinvestmentInstrument": "BONDDIA",
+    "isActive": true,
+    "lastExecutionDate": "2025-12-07",
+    "nextExecutionDate": "2025-12-14",
+    "createdAt": "2025-12-07T14:42:40.154Z",
+    "updatedAt": "2025-12-07T14:42:40.154Z"
+  },
+  {
+    "id": "RCfR-NfhNpJwFXF314pm_",
+    "userId": "1rTk-9NOEetWu7PNpvMyd",
+    "amount": 5000,
+    "frequency": "monthly",
+    "reinvestmentInstrument": "CETES",
+    "isActive": false,
+    "nextExecutionDate": "2026-01-07",
+    "createdAt": "2025-12-07T14:42:40.154Z",
+    "updatedAt": "2025-12-07T14:42:40.154Z"
+  },
+  {
+    "id": "zwqJjZCKJIA3lP0GUN775",
+    "userId": "4eSJVN_JJtxcLQwLCPuVX",
+    "amount": 500,
+    "frequency": "monthly",
+    "reinvestmentInstrument": "CETES",
+    "isActive": true,
+    "lastExecutionDate": "2025-12-07",
+    "nextExecutionDate": "2026-01-07",
+    "createdAt": "2025-12-07T14:42:40.155Z",
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  },
+  {
+    "id": "gfDQbGoksu6AhvXy57jS8",
+    "userId": "4eSJVN_JJtxcLQwLCPuVX",
+    "amount": 2000,
+    "frequency": "biweekly",
+    "reinvestmentInstrument": "BONDDIA",
+    "isActive": false,
+    "nextExecutionDate": "2025-12-21",
+    "createdAt": "2025-12-07T14:42:40.155Z",
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  },
+  {
+    "id": "bAFqF9PEDmOhHxQfAvayJ",
+    "userId": "5qZIkAlwTp4WYk1IKkUAr",
+    "amount": 1000,
+    "frequency": "weekly",
+    "reinvestmentInstrument": "BONDDIA",
+    "isActive": true,
+    "lastExecutionDate": "2025-12-07",
+    "nextExecutionDate": "2025-12-14",
+    "createdAt": "2025-12-07T14:42:40.155Z",
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  },
+  {
+    "id": "wWN1QF_g886pmC8z8bnbc",
+    "userId": "5qZIkAlwTp4WYk1IKkUAr",
+    "amount": 1000,
+    "frequency": "weekly",
+    "reinvestmentInstrument": "BONDDIA",
+    "isActive": false,
+    "nextExecutionDate": "2025-12-14",
+    "createdAt": "2025-12-07T14:42:40.155Z",
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  },
+  {
+    "id": "Qfp4C8y6qwUBkJh94LYJ2",
+    "userId": "ca4bzks-byWlm7ZRn_QQQ",
+    "amount": 500,
+    "frequency": "biweekly",
+    "reinvestmentInstrument": "CETES",
+    "isActive": true,
+    "lastExecutionDate": "2025-12-07",
+    "nextExecutionDate": "2025-12-21",
+    "createdAt": "2025-12-07T14:42:40.155Z",
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  },
+  {
+    "id": "01wiVI1AsKNwjw0LkshPM",
+    "userId": "ca4bzks-byWlm7ZRn_QQQ",
+    "amount": 500,
+    "frequency": "monthly",
+    "reinvestmentInstrument": "BONDDIA",
+    "isActive": false,
+    "nextExecutionDate": "2026-01-07",
+    "createdAt": "2025-12-07T14:42:40.155Z",
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  }
+]

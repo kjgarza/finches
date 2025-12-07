@@ -1,0 +1,346 @@
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Wallet, TrendingUp, Calendar, PiggyBank, Plus, Repeat, Send, MoreVertical, CheckCircle } from "lucide-react"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+
+export default function DashboardPage() {
+  // Mock data - in production, fetch from API
+  const stats = [
+    {
+      label: "Valor Total",
+      value: "$847,250",
+      change: "+2.4%",
+      trend: "up" as const,
+      icon: Wallet,
+      color: "text-blue-600"
+    },
+    {
+      label: "Rendimientos",
+      value: "$34,890",
+      change: "+8.2%",
+      trend: "up" as const,
+      icon: TrendingUp,
+      color: "text-emerald-600"
+    },
+    {
+      label: "Vencimiento Próximo",
+      value: "15 Dic",
+      change: "Próximo",
+      trend: "neutral" as const,
+      icon: Calendar,
+      color: "text-amber-600"
+    },
+    {
+      label: "Ahorro recurrente",
+      value: "$5,000",
+      change: "Activo",
+      trend: "up" as const,
+      icon: PiggyBank,
+      color: "text-purple-600"
+    },
+    {
+      label: "Estado",
+      value: "Activo",
+      change: "Todo operando",
+      trend: "up" as const,
+      icon: CheckCircle,
+      color: "text-emerald-600"
+    }
+  ]
+
+  const investments = [
+    {
+      instrument: "CETES 28 días",
+      subasta: "15/11/2024",
+      monto: "$150,000",
+      rendimiento: "11.25%",
+      tipo: "anual",
+      vencimiento: "15 Dic 2024",
+      estado: "Activo"
+    },
+    {
+      instrument: "BONDDIA",
+      subasta: "Liquidez diaria",
+      monto: "$75,500",
+      rendimiento: "10.80%",
+      tipo: "anual",
+      vencimiento: "Diario",
+      estado: "Activo"
+    },
+    {
+      instrument: "UDIBONOS",
+      subasta: "3 años",
+      monto: "$200,000",
+      rendimiento: "4.15%",
+      tipo: "real",
+      vencimiento: "22 Ene 2027",
+      estado: "Activo"
+    }
+  ]
+
+  const allocation = [
+    { name: "CETES 28 días", percentage: 45, value: "$381,112", color: "bg-blue-600" },
+    { name: "BONDDIA", percentage: 25, value: "$211,813", color: "bg-emerald-600" },
+    { name: "UDIBONOS", percentage: 20, value: "$169,450", color: "bg-amber-600" },
+    { name: "CETES 91 días", percentage: 10, value: "$84,725", color: "bg-purple-600" }
+  ]
+
+  return (
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-2">Buen día, Juan</h1>
+        <p className="text-base text-muted-foreground">
+          Aquí tienes un resumen de tu portafolio de inversiones
+        </p>
+      </div>
+
+      {/* Stats Grid */}
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-3 xl:grid-cols-5">
+        {stats.map((stat) => {
+          const Icon = stat.icon
+          return (
+            <Card key={stat.label} className="rounded-xl border shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className={cn("p-3 rounded-lg", stat.color === "text-blue-600" ? "bg-blue-100 dark:bg-blue-900/20" : stat.color === "text-emerald-600" ? "bg-emerald-100 dark:bg-emerald-900/20" : stat.color === "text-amber-600" ? "bg-amber-100 dark:bg-amber-900/20" : "bg-purple-100 dark:bg-purple-900/20")}>
+                    <Icon className={cn("h-6 w-6", stat.color)} />
+                  </div>
+                  <span className={cn(
+                    "text-sm font-semibold",
+                    stat.trend === "up" ? "text-emerald-600 dark:text-emerald-400" : "text-muted-foreground"
+                  )}>
+                    {stat.change}
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
+                  <p className="text-2xl font-bold">{stat.value}</p>
+                </div>
+              </CardContent>
+            </Card>
+          )
+        })}
+      </div>
+
+      {/* Chart & Distribution */}
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Portfolio Performance Chart */}
+        <Card className="rounded-xl border shadow-sm">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+            <CardTitle className="text-lg font-semibold" id="portfolio-performance-title">Rendimiento del Portafolio</CardTitle>
+            <select className="text-sm border rounded-md px-3 py-2 bg-background focus:outline-none focus:ring-2 focus:ring-ring">
+              <option>Últimos 6 meses</option>
+              <option>Último año</option>
+              <option>Todo</option>
+            </select>
+          </CardHeader>
+          <CardContent>
+            <div className="relative h-[300px] pt-4 pb-2" role="img" aria-labelledby="portfolio-performance-title" aria-label="Gráfico de línea mostrando el rendimiento del portafolio durante los últimos 6 meses con una tendencia al alza">
+              {/* Line chart representation - showing upward trend */}
+              <svg className="w-full h-full" viewBox="0 0 600 300" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="oklch(0.60 0.12 240)" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="oklch(0.60 0.12 240)" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                {/* Area fill */}
+                <polyline
+                  points="0,260 50,240 100,230 150,220 200,200 250,180 300,160 350,140 400,120 450,100 500,80 550,70 600,60 600,300 0,300"
+                  fill="url(#chartGradient)"
+                />
+                {/* Line */}
+                <polyline
+                  points="0,260 50,240 100,230 150,220 200,200 250,180 300,160 350,140 400,120 450,100 500,80 550,70 600,60"
+                  fill="none"
+                  stroke="oklch(0.60 0.12 240)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="flex justify-between text-sm text-muted-foreground mt-4 pt-3 border-t">
+              <span>Jun</span>
+              <span>Jul</span>
+              <span>Ago</span>
+              <span>Sep</span>
+              <span>Oct</span>
+              <span>Nov</span>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Asset Distribution */}
+        <Card className="rounded-xl border shadow-sm">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-lg font-semibold" id="asset-distribution-title">Distribución de Activos</CardTitle>
+              <Tabs defaultValue="valor" className="w-auto">
+                <TabsList className="h-9">
+                  <TabsTrigger value="valor" className="text-sm px-4">Valor</TabsTrigger>
+                  <TabsTrigger value="porcentaje" className="text-sm px-4">Porcentaje</TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Pie Chart Representation */}
+            <div className="flex items-center justify-center py-6">
+              <div className="relative w-52 h-52" role="img" aria-labelledby="asset-distribution-title" aria-label="Gráfico circular mostrando la distribución de activos: CETES 28 días 45%, BONDDIA 22%, UDIBONOS 30%, CETES 91 días 3%">
+                <svg viewBox="0 0 100 100" className="transform -rotate-90 w-full h-full">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="oklch(0.92 0.004 286.32)" strokeWidth="20" />
+                  {/* CETES 28 días - 45% - Blue */}
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="oklch(0.60 0.12 240)" strokeWidth="20" 
+                    strokeDasharray="113 251" strokeDashoffset="0" />
+                  {/* BONDDIA - 25% - Green */}
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="oklch(0.65 0.15 145)" strokeWidth="20" 
+                    strokeDasharray="63 251" strokeDashoffset="-113" />
+                  {/* UDIBONOS - 20% - Orange */}
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="oklch(0.75 0.15 85)" strokeWidth="20" 
+                    strokeDasharray="50 251" strokeDashoffset="-176" />
+                  {/* CETES 91 días - 10% - Purple */}
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="oklch(0.70 0.10 250)" strokeWidth="20" 
+                    strokeDasharray="25 251" strokeDashoffset="-226" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Distribution List */}
+            <div className="space-y-4">
+              {allocation.map((item) => (
+                <div key={item.name} className="flex items-center justify-between py-2">
+                  <div className="flex items-center gap-3">
+                    <div className={cn(
+                      "w-4 h-4 rounded-full shrink-0",
+                      item.name === "CETES 28 días" ? "bg-blue-600" :
+                      item.name === "BONDDIA" ? "bg-emerald-600" :
+                      item.name === "UDIBONOS" ? "bg-amber-600" : "bg-purple-600"
+                    )} />
+                    <span className="text-sm font-medium">{item.name}</span>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold">{item.percentage}%</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Active Investments Table */}
+      <Card className="rounded-xl border shadow-sm">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+          <CardTitle className="text-lg font-semibold">Inversiones Activas</CardTitle>
+          <Link href="/dashboard/inversiones" className="text-sm text-primary hover:underline font-medium">
+            Ver todas
+          </Link>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="font-semibold">Instrumento</TableHead>
+                <TableHead className="font-semibold">Monto</TableHead>
+                <TableHead className="font-semibold">Rendimiento</TableHead>
+                <TableHead className="font-semibold">Vencimiento</TableHead>
+                <TableHead className="font-semibold">Estado</TableHead>
+                <TableHead className="text-right font-semibold">Acciones</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {investments.map((investment, index) => (
+                <TableRow key={index} className="hover:bg-muted/50">
+                  <TableCell>
+                    <div className="flex items-center gap-3">
+                      <div className={cn(
+                        "w-10 h-10 rounded-lg flex items-center justify-center",
+                        investment.instrument === "CETES 28 días" ? "bg-blue-100" :
+                        investment.instrument === "BONDDIA" ? "bg-emerald-100" : "bg-amber-100"
+                      )}>
+                        {investment.instrument === "CETES 28 días" ? (
+                          <Wallet className="h-5 w-5 text-blue-600" />
+                        ) : investment.instrument === "BONDDIA" ? (
+                          <TrendingUp className="h-5 w-5 text-emerald-600" />
+                        ) : (
+                          <Wallet className="h-5 w-5 text-amber-600" />
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-medium">{investment.instrument}</p>
+                        <p className="text-xs text-muted-foreground">{investment.subasta}</p>
+                      </div>
+                    </div>
+                  </TableCell>
+                  <TableCell className="font-semibold">{investment.monto}</TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-1">
+                      <span className="font-medium text-emerald-600">{investment.rendimiento}</span>
+                      <span className="text-xs text-muted-foreground">{investment.tipo}</span>
+                    </div>
+                  </TableCell>
+                  <TableCell>{investment.vencimiento}</TableCell>
+                  <TableCell>
+                    <Badge variant="secondary" className="bg-emerald-50 text-emerald-700 border-emerald-200 font-medium">
+                      {investment.estado}
+                    </Badge>
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <MoreVertical className="h-4 w-4" />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+
+      {/* Quick Actions */}
+      <div className="grid gap-4 md:grid-cols-3">
+        <Card className="rounded-xl border hover:shadow-md transition-shadow cursor-pointer">
+          <CardContent className="p-6 flex flex-col items-center text-center gap-4">
+            <div className="p-4 rounded-full bg-blue-100">
+              <Plus className="h-6 w-6 text-blue-600" />
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Nueva Inversión</p>
+              <p className="text-xs text-muted-foreground">Invierte en CETES, BONDDIA o UDIBONOS</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-xl border hover:shadow-md transition-shadow cursor-pointer">
+          <CardContent className="p-6 flex flex-col items-center text-center gap-4">
+            <div className="p-4 rounded-full bg-emerald-100">
+              <Repeat className="h-6 w-6 text-emerald-600" />
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Configurar Ahorro</p>
+              <p className="text-xs text-muted-foreground">Programa inversiones automáticas</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-xl border hover:shadow-md transition-shadow cursor-pointer">
+          <CardContent className="p-6 flex flex-col items-center text-center gap-4">
+            <div className="p-4 rounded-full bg-amber-100">
+              <Send className="h-6 w-6 text-amber-600" />
+            </div>
+            <div>
+              <p className="font-semibold mb-1">Enviar Recursos</p>
+              <p className="text-xs text-muted-foreground">Transfiere fondos a tu cuenta</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+}

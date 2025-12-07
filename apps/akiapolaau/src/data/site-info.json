@@ -1,0 +1,51 @@
+{
+  "contact": {
+    "phone": "(55) 5000-7999",
+    "email": "contacto@cetesdirecto.com",
+    "whatsapp": "525550007999",
+    "hours": {
+      "weekdays": "Lunes a viernes de 9:00 a 18:00 horas",
+      "saturday": "Sábados de 9:00 a 14:00 horas"
+    },
+    "address": {
+      "street": "Av. Insurgentes sur 1971, local 340",
+      "neighborhood": "Colonia Guadalupe Inn",
+      "city": "Ciudad de México",
+      "hours": {
+        "weekdays": "Lunes a viernes de 09:00 a 17:00 horas",
+        "saturday": "Sábados de 10:00 a 14:00 horas"
+      }
+    }
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/cetesdirecto",
+    "twitter": "https://twitter.com/cetesdirecto",
+    "youtube": "https://www.youtube.com/user/Cetesdirecto",
+    "instagram": "https://www.instagram.com/cetesdirectomx/"
+  },
+  "apps": {
+    "appStore": "https://apps.apple.com/mx/app/cetesdirecto/id950772539",
+    "googlePlay": "https://play.google.com/store/apps/details?id=air.com.cetesdirecto.cetesmobile",
+    "appGallery": "https://appgallery.cloud.huawei.com/ag/n/app/C101534813"
+  },
+  "condusef": {
+    "phone": "55 5340 0999",
+    "tollFree": "800 999 8080",
+    "website": "www.condusef.gob.mx"
+  },
+  "stats": {
+    "clients": "2,300,000",
+    "invested": "160 mil millones"
+  },
+  "requirements": [
+    "Ser mayor de 18 años",
+    "INE",
+    "CURP",
+    "Una cuenta bancaria de la cual seas titular"
+  ],
+  "logos": {
+    "hacienda": "/hacienda.png",
+    "nachinalfinanciera": "/nachinalfinanciera.png",
+    "main": "/logo.png"
+  }
+}

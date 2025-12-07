@@ -1,0 +1,30 @@
+"use client"
+
+import { useEffect } from "react"
+
+export function PWARegister() {
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      "serviceWorker" in navigator
+    ) {
+      // Check if we should register the service worker
+      // In development, next-pwa disables it, but in production we register it
+      navigator.serviceWorker
+        .register("/sw.js", { scope: "/" })
+        .then((registration) => {
+          console.log("✅ Service Worker registered successfully")
+          console.log("Scope:", registration.scope)
+          
+          // Check for updates
+          registration.update()
+        })
+        .catch((error) => {
+          console.error("❌ Service Worker registration failed:", error)
+        })
+    }
+  }, [])
+
+  return null
+}
+

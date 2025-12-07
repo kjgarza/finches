@@ -1,0 +1,108 @@
+[
+  {
+    "id": "vNnxFFVb31WmgHFP8Ne_Z",
+    "email": "maria.lopez@example.com",
+    "username": "mlopez",
+    "password": "$2b$10$abcdefghijklmnopqrstuvwxyz1234567890",
+    "name": "María López García",
+    "curp": "LOGM850315MDFPRR09",
+    "rfc": "LOGM850315AB1",
+    "dateOfBirth": "1985-03-15",
+    "gender": "F",
+    "entity": "Ciudad de México",
+    "bankAccount": {
+      "clabe": "012180001234567890",
+      "bankName": "BBVA México",
+      "accountHolder": "María López García"
+    },
+    "contractNumber": "CT-2024-001",
+    "createdAt": "2025-12-07T14:42:40.151Z",
+    "updatedAt": "2025-12-07T14:42:40.151Z"
+  },
+  {
+    "id": "1rTk-9NOEetWu7PNpvMyd",
+    "email": "juan.perez@example.com",
+    "username": "jperez",
+    "password": "$2b$10$abcdefghijklmnopqrstuvwxyz1234567890",
+    "name": "Juan Pérez Martínez",
+    "curp": "PEMJ900525HDFRRN03",
+    "rfc": "PEMJ900525CD2",
+    "dateOfBirth": "1990-05-25",
+    "gender": "M",
+    "entity": "Jalisco",
+    "bankAccount": {
+      "clabe": "014180002345678901",
+      "bankName": "Santander México",
+      "accountHolder": "Juan Pérez Martínez",
+      "beneficiaries": [
+        {
+          "name": "Ana Pérez López",
+          "percentage": 100
+        }
+      ]
+    },
+    "contractNumber": "CT-2024-002",
+    "createdAt": "2025-12-07T14:42:40.151Z",
+    "updatedAt": "2025-12-07T14:42:40.151Z"
+  },
+  {
+    "id": "4eSJVN_JJtxcLQwLCPuVX",
+    "email": "carmen.rodriguez@example.com",
+    "username": "crodriguez",
+    "password": "$2b$10$abcdefghijklmnopqrstuvwxyz1234567890",
+    "name": "Carmen Rodríguez Hernández",
+    "curp": "ROHC920810MDFRDR04",
+    "rfc": "ROHC920810EF3",
+    "dateOfBirth": "1992-08-10",
+    "gender": "F",
+    "entity": "Nuevo León",
+    "bankAccount": {
+      "clabe": "072180003456789012",
+      "bankName": "Banorte",
+      "accountHolder": "Carmen Rodríguez Hernández"
+    },
+    "contractNumber": "CT-2024-003",
+    "createdAt": "2025-12-07T14:42:40.151Z",
+    "updatedAt": "2025-12-07T14:42:40.151Z"
+  },
+  {
+    "id": "5qZIkAlwTp4WYk1IKkUAr",
+    "email": "roberto.sanchez@example.com",
+    "username": "rsanchez",
+    "password": "$2b$10$abcdefghijklmnopqrstuvwxyz1234567890",
+    "name": "Roberto Sánchez Torres",
+    "curp": "SATR880420HDFNRB08",
+    "rfc": "SATR880420GH4",
+    "dateOfBirth": "1988-04-20",
+    "gender": "M",
+    "entity": "Guanajuato",
+    "bankAccount": {
+      "clabe": "021180004567890123",
+      "bankName": "HSBC México",
+      "accountHolder": "Roberto Sánchez Torres"
+    },
+    "contractNumber": "CT-2024-004",
+    "createdAt": "2025-12-07T14:42:40.151Z",
+    "updatedAt": "2025-12-07T14:42:40.151Z"
+  },
+  {
+    "id": "ca4bzks-byWlm7ZRn_QQQ",
+    "email": "ana.martinez@example.com",
+    "username": "amartinez",
+    "password": "$2b$10$abcdefghijklmnopqrstuvwxyz1234567890",
+    "name": "Ana Martínez Flores",
+    "curp": "MAFA950618MDFRLR01",
+    "rfc": "MAFA950618IJ5",
+    "dateOfBirth": "1995-06-18",
+    "gender": "F",
+    "entity": "Veracruz",
+    "bankAccount": {
+      "clabe": "044180005678901234",
+      "bankName": "Scotiabank México",
+      "accountHolder": "Ana Martínez Flores"
+    },
+    "contractNumber": "CT-2024-005",
+    "createdAt": "2025-12-07T14:42:40.151Z",
+    "updatedAt": "2025-12-07T14:42:40.151Z"
+  }
+]

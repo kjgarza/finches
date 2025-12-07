@@ -1,0 +1,26 @@
+{
+  "name": "finches",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.3",
+    "react-hook-form": "^7.53.0",
+    "zod": "^3.23.0",
+    "date-fns": "^3.0.0",
+    "nanoid": "^5.0.0"
+  },
+  "packageManager": "bun@1.1.38",
+  "trustedDependencies": ["@biomejs/biome"]
+}

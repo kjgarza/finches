@@ -1,0 +1,74 @@
+[
+  {
+    "id": "u6KZWg46XS9fC9KbP0_KM",
+    "userId": "vNnxFFVb31WmgHFP8Ne_Z",
+    "totalBalance": 277601.66,
+    "totalInvested": 270971,
+    "totalGain": 6630.659999999974,
+    "gainPercentage": 2.45,
+    "investments": [
+      "vc1i_mO19DUNoYnD4qfdK",
+      "X8feQXCshwHrDahgxRl3w",
+      "pfZpn0FlIqxkYt58PwtPh",
+      "2QDx29-g3Ll1tuz2XUDoQ"
+    ],
+    "updatedAt": "2025-12-07T14:42:40.153Z"
+  },
+  {
+    "id": "8WQYVO_JNxLNTvhhNcBVZ",
+    "userId": "1rTk-9NOEetWu7PNpvMyd",
+    "totalBalance": 152763.25,
+    "totalInvested": 149862,
+    "totalGain": 2901.25,
+    "gainPercentage": 1.94,
+    "investments": [
+      "Ht4ROgqmFCTgi9r-VR2uE",
+      "fs0ZEl2xahCUigqI6EDdD",
+      "a7ZTsMQ50LunGBnzCMWIn"
+    ],
+    "updatedAt": "2025-12-07T14:42:40.154Z"
+  },
+  {
+    "id": "jYrxapQz30Dw3m_c3rbeB",
+    "userId": "4eSJVN_JJtxcLQwLCPuVX",
+    "totalBalance": 149785.59,
+    "totalInvested": 146548,
+    "totalGain": 3237.5899999999965,
+    "gainPercentage": 2.21,
+    "investments": [
+      "W-_kXY4iU8amu1jInjpZM",
+      "5_NuuPPZZMADLl3jeCS9S",
+      "WIU6cuqz8PcjJpBzwwJ1S"
+    ],
+    "updatedAt": "2025-12-07T14:42:40.154Z"
+  },
+  {
+    "id": "HAO4331KAl_sPWyarxlIV",
+    "userId": "5qZIkAlwTp4WYk1IKkUAr",
+    "totalBalance": 185972.05,
+    "totalInvested": 181120,
+    "totalGain": 4852.049999999988,
+    "gainPercentage": 2.68,
+    "investments": [
+      "6T3DrdRVBnlPNd6WPSBU1",
+      "JuC3outqnFJyXhzTZdeH_",
+      "IpB2lK2aJnN-eEGaQtRrX"
+    ],
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  },
+  {
+    "id": "jMTZ6nB2y9JN1n7P9goq6",
+    "userId": "ca4bzks-byWlm7ZRn_QQQ",
+    "totalBalance": 233751.53999999998,
+    "totalInvested": 227095,
+    "totalGain": 6656.539999999979,
+    "gainPercentage": 2.93,
+    "investments": [
+      "KrwVw04Ovc5AU1VSCV-KK",
+      "gB2I7apqHAamkZwqMoBED",
+      "-sDZOUcxj8V9MpuJUi9fI",
+      "iFEvEVcv5lvFaZf0sM9ww"
+    ],
+    "updatedAt": "2025-12-07T14:42:40.155Z"
+  }
+]
