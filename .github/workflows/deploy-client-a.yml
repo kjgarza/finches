@@ -24,6 +24,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy Client A
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
