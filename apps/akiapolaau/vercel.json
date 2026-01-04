@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd ../.. && npx turbo run build --filter=akiapolaau",
+  "buildCommand": "cd ../.. && bun install && npx turbo run build --filter=akiapolaau",
   "outputDirectory": ".next",
-  "framework": "nextjs",
-  "installCommand": "bun install"
+  "framework": null,
+  "installCommand": null
 }
