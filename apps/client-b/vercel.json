@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd ../.. && npx turbo run build --filter=client-b",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "bun install"
+}
