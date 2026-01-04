@@ -7,6 +7,18 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Client B - Finches',
   description: 'Next.js 15 app powered by Turborepo and Bun',
+  openGraph: {
+    title: 'Client B - Finches',
+    description: 'Next.js 15 app powered by Turborepo and Bun',
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Client B',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Client B - Finches',
+    description: 'Next.js 15 app powered by Turborepo and Bun',
+  },
 };
 
 export default function RootLayout({
