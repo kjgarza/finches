@@ -17,6 +17,18 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "CetesDirecto",
   },
+  openGraph: {
+    title: "Cetesdirecto - Inversiones Inteligentes",
+    description: "Plataforma de inversión en instrumentos gubernamentales mexicanos",
+    type: "website",
+    locale: "es_MX",
+    siteName: "CetesDirecto",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cetesdirecto - Inversiones Inteligentes",
+    description: "Plataforma de inversión en instrumentos gubernamentales mexicanos",
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
