@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { NumericFormat, NumericFormatProps } from "react-number-format"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 
 export interface CurrencyInputProps extends Omit<NumericFormatProps, "value" | "onValueChange"> {
   value?: number

@@ -2,7 +2,7 @@
 
 import { TrendingUp, TrendingDown, Calendar, Coins } from "lucide-react"
 import { Card } from "@repo/ui"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 
 export interface InvestmentCardProps {
   instrument: string
