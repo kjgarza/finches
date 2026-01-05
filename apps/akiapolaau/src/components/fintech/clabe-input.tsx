@@ -3,7 +3,7 @@
 import * as React from "react"
 import { PatternFormat, PatternFormatProps } from "react-number-format"
 import { Copy, Check } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 import { Button } from "@repo/ui"
 
 export interface ClabeInputProps extends Omit<PatternFormatProps, "value" | "onValueChange"> {

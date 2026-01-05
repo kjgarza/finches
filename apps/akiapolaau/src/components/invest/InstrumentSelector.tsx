@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui"
 import { RadioGroup, RadioGroupItem } from "@repo/ui"
 import { Label } from "@repo/ui"
 import { Badge } from "@repo/ui"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 
 export interface InstrumentOption {
   id: "CETES" | "BONDDIA" | "UDIBONOS"

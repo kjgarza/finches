@@ -27,3 +27,6 @@ export * from './toggle-group';
 export * from './toggle';
 export * from './tooltip';
 export { VisuallyHidden } from './visually-hidden';
+
+// Re-export form utilities for monorepo consumers
+export { zodResolver } from "@hookform/resolvers/zod";

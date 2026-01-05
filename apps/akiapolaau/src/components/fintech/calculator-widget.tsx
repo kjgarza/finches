@@ -4,7 +4,7 @@ import * as React from "react"
 import { ArrowLeftRight } from "lucide-react"
 import { Card } from "@repo/ui"
 import { Button } from "@repo/ui"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 import { CurrencyInput } from "./currency-input"
 
 export interface CalculatorWidgetProps {

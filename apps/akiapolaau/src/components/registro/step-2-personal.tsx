@@ -1,6 +1,6 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
+import { zodResolver } from "@repo/ui"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@repo/ui"

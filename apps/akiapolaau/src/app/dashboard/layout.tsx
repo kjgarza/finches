@@ -19,7 +19,7 @@ import {
   Bell,
   Plus
 } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 import { Footer } from "@/components/footer"
 
 export default function DashboardLayout({

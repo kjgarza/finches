@@ -2,7 +2,7 @@
 
 import { TrendingUp, TrendingDown, PieChart } from "lucide-react"
 import { Card } from "@repo/ui"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 
 export interface PortfolioSummaryProps {
   totalBalance: number

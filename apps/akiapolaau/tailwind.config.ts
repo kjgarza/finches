@@ -5,7 +5,6 @@ const config: Config = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "../../packages/ui/src/**/*.{js,ts,jsx,tsx}",
-    "../../packages/fintech-ui/src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
   	extend: {

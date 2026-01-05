@@ -3,7 +3,7 @@
 import * as React from "react"
 import { PatternFormat, PatternFormatProps } from "react-number-format"
 import { CheckCircle2, XCircle } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 
 export interface CurpInputProps extends Omit<PatternFormatProps, "value" | "onValueChange"> {
   value?: string

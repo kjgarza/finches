@@ -6,7 +6,7 @@ import { Label } from "@repo/ui"
 import { RadioGroup, RadioGroupItem } from "@repo/ui"
 import { Checkbox } from "@repo/ui"
 import { CreditCard, Building2 } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "@repo/utils"
 
 interface InvestmentDetailsProps {
   amount: string
