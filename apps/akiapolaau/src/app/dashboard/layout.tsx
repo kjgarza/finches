@@ -108,7 +108,7 @@ export default function DashboardLayout({
       {/* Main Content Area */}
       <div className="flex-1 lg:pl-64 w-full">
         {/* Top Header Bar */}
-        <header className="fixed top-0 right-0 lg:left-64 left-0 h-16 border-b bg-background z-40 lg:z-40">
+        <header className="fixed top-0 right-0 lg:left-64 left-0 h-16 border-b bg-background z-40">
           <div className="flex items-center justify-between h-full px-4 lg:px-6">
             <div className="flex items-center gap-4 ml-auto">
               <Button variant="ghost" size="icon" className="relative">
@@ -122,11 +122,11 @@ export default function DashboardLayout({
                 </Avatar>
                 <span className="hidden md:block text-sm font-medium">Juan Pérez</span>
               </div>
-              <Button className="gap-2 hidden sm:flex" asChild>
-                <Link href="/dashboard/nueva-inversion">
+              <Button className="gap-2" asChild>
+                <Link href="/dashboard/nueva-inversion" aria-label="Nueva Inversión">
                   <Plus className="h-4 w-4" />
+                  <span className="hidden sm:inline lg:hidden">Nueva</span>
                   <span className="hidden lg:inline">Nueva Inversión</span>
-                  <span className="lg:hidden">Nueva</span>
                 </Link>
               </Button>
             </div>

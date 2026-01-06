@@ -42,12 +42,12 @@ export default function HomePage() {
             <ThemeSwitcher />
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10">
+                <Button variant="ghost" size="icon" className="h-11 w-11">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Abrir menú</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-72 bg-background">
+              <SheetContent side="right" className="w-[85vw] max-w-sm bg-background">
                 <VisuallyHidden>
                   <SheetTitle>Menú de navegación</SheetTitle>
                 </VisuallyHidden>
