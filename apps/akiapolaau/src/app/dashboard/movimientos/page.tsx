@@ -84,29 +84,29 @@ export default function MovimientosPage() {
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6">
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="min-w-0">
           <h1 className="text-2xl font-bold">Movimientos</h1>
           <p className="text-sm text-muted-foreground">
             Historial completo de transacciones
           </p>
         </div>
-        <Button variant="outline" className="gap-2">
+        <Button variant="outline" className="gap-2 w-full sm:w-auto">
           <Download className="h-4 w-4" />
           Exportar
         </Button>
       </div>
 
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <Card className="rounded-xl">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="min-w-0 flex-1 pr-2">
                 <p className="text-sm font-medium text-muted-foreground">Ingresos</p>
                 <p className="text-2xl font-bold text-emerald-600">+$52,890</p>
               </div>
-              <div className="p-3 rounded-lg bg-success/10">
+              <div className="p-3 rounded-lg bg-success/10 shrink-0">
                 <ArrowDownLeft className="h-5 w-5 text-emerald-600" />
               </div>
             </div>
@@ -116,11 +116,11 @@ export default function MovimientosPage() {
         <Card className="rounded-xl">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="min-w-0 flex-1 pr-2">
                 <p className="text-sm font-medium text-muted-foreground">Egresos</p>
                 <p className="text-2xl font-bold text-blue-600">-$45,000</p>
               </div>
-              <div className="p-3 rounded-lg bg-info/10">
+              <div className="p-3 rounded-lg bg-info/10 shrink-0">
                 <ArrowUpRight className="h-5 w-5 text-blue-600" />
               </div>
             </div>
@@ -130,11 +130,11 @@ export default function MovimientosPage() {
         <Card className="rounded-xl">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="min-w-0 flex-1 pr-2">
                 <p className="text-sm font-medium text-muted-foreground">Transacciones</p>
                 <p className="text-2xl font-bold">127</p>
               </div>
-              <div className="p-3 rounded-lg bg-accent">
+              <div className="p-3 rounded-lg bg-accent shrink-0">
                 <Repeat className="h-5 w-5 text-purple-600" />
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function MovimientosPage() {
 
         <Card className="rounded-xl">
           <CardContent className="p-6">
-            <div>
+            <div className="min-w-0">
               <p className="text-sm font-medium text-muted-foreground">Balance Neto</p>
               <p className="text-2xl font-bold text-emerald-600">+$7,890</p>
               <p className="text-xs text-muted-foreground mt-1">Este mes</p>
@@ -156,14 +156,14 @@ export default function MovimientosPage() {
       <Card className="rounded-xl">
         <CardContent className="p-4">
           <div className="flex gap-3 flex-wrap">
-            <div className="flex-1 min-w-[200px]">
+            <div className="flex-1 min-w-0 sm:min-w-[200px]">
               <div className="relative">
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input placeholder="Buscar movimientos..." className="pl-9" />
               </div>
             </div>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-full sm:w-[180px]">
                 <SelectValue placeholder="Tipo" />
               </SelectTrigger>
               <SelectContent>
@@ -175,7 +175,7 @@ export default function MovimientosPage() {
               </SelectContent>
             </Select>
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-full sm:w-[180px]">
                 <SelectValue placeholder="Período" />
               </SelectTrigger>
               <SelectContent>
@@ -185,7 +185,7 @@ export default function MovimientosPage() {
                 <SelectItem value="year">Último año</SelectItem>
               </SelectContent>
             </Select>
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" className="shrink-0">
               <Filter className="h-4 w-4" />
             </Button>
           </div>
@@ -205,20 +205,20 @@ export default function MovimientosPage() {
             {movements.map((movement) => (
               <div
                 key={movement.id}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 border rounded-lg hover:bg-muted/50 transition-colors"
               >
-                <div className="flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-muted">
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4 min-w-0">
+                  <div className="p-2 rounded-lg bg-muted shrink-0">
                     {getMovementIcon(movement.type)}
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <p className="font-semibold">{movement.type}</p>
                       <Badge variant="outline" className="text-xs">
                         {movement.status}
                       </Badge>
                     </div>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground truncate">
                       {movement.description}
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
@@ -226,11 +226,12 @@ export default function MovimientosPage() {
                     </p>
                   </div>
                 </div>
-                <div className="text-right">
+                {/* Align with icon + gap on mobile (p-2 = 8px, gap-3 = 12px, icon = 16px, total ~44px) */}
+                <div className="text-left sm:text-right shrink-0 pl-11 sm:pl-0">
                   <p className={`text-lg font-bold ${getMovementColor(movement.type)}`}>
                     {movement.amount}
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground whitespace-nowrap">
                     Balance: {movement.balance}
                   </p>
                 </div>

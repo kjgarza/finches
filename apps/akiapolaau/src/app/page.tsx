@@ -1,13 +1,20 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@repo/ui"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@repo/ui"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@repo/ui"
+import { VisuallyHidden } from "@repo/ui"
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Footer } from "@/components/footer"
-import { TrendingUp, Shield, Clock, DollarSign, ArrowRight, Users, Building2, CheckCircle2 } from "lucide-react"
+import { TrendingUp, Shield, Clock, DollarSign, ArrowRight, Users, Building2, CheckCircle2, Menu } from "lucide-react"
 import siteInfo from "@/data/site-info.json"
 
 export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -18,7 +25,9 @@ export default function HomePage() {
               Cetesdirecto
             </h1>
           </Link>
-          <div className="flex gap-2 items-center">
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-2 items-center">
             <ThemeSwitcher />
             <Link href="/registro">
               <Button variant="ghost">Abrir Cuenta</Button>
@@ -26,6 +35,36 @@ export default function HomePage() {
             <Link href="/dashboard">
               <Button className="bg-trust hover:bg-trust/90">Iniciar Sesión</Button>
             </Link>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="flex md:hidden gap-2 items-center">
+            <ThemeSwitcher />
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-11 w-11">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Abrir menú</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[85vw] max-w-sm bg-background">
+                <VisuallyHidden>
+                  <SheetTitle>Menú de navegación</SheetTitle>
+                </VisuallyHidden>
+                <nav className="flex flex-col gap-4 mt-8">
+                  <Link href="/registro" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="ghost" className="w-full justify-start text-base h-12">
+                      Abrir Cuenta
+                    </Button>
+                  </Link>
+                  <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                    <Button className="w-full bg-trust hover:bg-trust/90 text-base h-12">
+                      Iniciar Sesión
+                    </Button>
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>

@@ -74,7 +74,7 @@ export default function DashboardLayout({
   )
 
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="min-h-screen bg-background flex overflow-x-hidden">
       {/* Desktop Sidebar - Always visible on large screens */}
       <aside className="hidden lg:flex fixed top-0 left-0 h-screen w-64 z-50">
         <SidebarContent />
@@ -91,9 +91,10 @@ export default function DashboardLayout({
               <SheetTrigger asChild>
                 <Button variant="ghost" size="sm">
                   <Menu className="h-5 w-5" />
+                  <span className="sr-only">Abrir menú</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-64 p-0">
+              <SheetContent side="left" className="w-64 p-0 bg-background">
                 <VisuallyHidden>
                   <SheetTitle>Menú de navegación</SheetTitle>
                 </VisuallyHidden>
@@ -105,17 +106,15 @@ export default function DashboardLayout({
       </header>
 
       {/* Main Content Area */}
-      <div className="flex-1 lg:pl-64">
+      <div className="flex-1 lg:pl-64 w-full">
         {/* Top Header Bar */}
-        <header className="fixed top-0 right-0 lg:left-64 h-16 border-b bg-background z-40">
-          <div className="flex items-center justify-between h-full px-6">
-            <div className="lg:hidden">
-              <h1 className="text-xl font-bold text-primary">Cetesdirecto</h1>
-            </div>
+        <header className="fixed top-0 right-0 lg:left-64 left-0 h-16 border-b bg-background z-40">
+          <div className="flex items-center justify-between h-full px-4 lg:px-6">
             <div className="flex items-center gap-4 ml-auto">
               <Button variant="ghost" size="icon" className="relative">
                 <Bell className="h-5 w-5" />
                 <span className="absolute top-1 right-1 h-2 w-2 bg-destructive rounded-full" />
+                <span className="sr-only">Notificaciones</span>
               </Button>
               <div className="flex items-center gap-3">
                 <Avatar className="h-8 w-8">
@@ -124,9 +123,10 @@ export default function DashboardLayout({
                 <span className="hidden md:block text-sm font-medium">Juan Pérez</span>
               </div>
               <Button className="gap-2" asChild>
-                <Link href="/dashboard/nueva-inversion">
+                <Link href="/dashboard/nueva-inversion" aria-label="Nueva Inversión">
                   <Plus className="h-4 w-4" />
-                  Nueva Inversión
+                  <span className="hidden sm:inline lg:hidden">Nueva</span>
+                  <span className="hidden lg:inline">Nueva Inversión</span>
                 </Link>
               </Button>
             </div>
@@ -135,7 +135,7 @@ export default function DashboardLayout({
 
         {/* Main Content */}
         <main className="pt-16 min-h-screen flex flex-col">
-          <div className="max-w-screen-xl mx-auto p-6 flex-1">
+          <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 py-6 flex-1">
             {children}
           </div>
           <Footer />
