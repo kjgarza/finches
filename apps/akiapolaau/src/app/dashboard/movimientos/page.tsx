@@ -156,7 +156,7 @@ export default function MovimientosPage() {
       <Card className="rounded-xl">
         <CardContent className="p-4">
           <div className="flex gap-3 flex-wrap">
-            <div className="flex-1 min-w-0 w-full sm:w-auto sm:min-w-[200px]">
+            <div className="flex-1 min-w-0 sm:min-w-[200px]">
               <div className="relative">
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input placeholder="Buscar movimientos..." className="pl-9" />
@@ -226,6 +226,7 @@ export default function MovimientosPage() {
                     </p>
                   </div>
                 </div>
+                {/* Align with icon + gap on mobile (p-2 = 8px, gap-3 = 12px, icon = 16px, total ~44px) */}
                 <div className="text-left sm:text-right shrink-0 pl-11 sm:pl-0">
                   <p className={`text-lg font-bold ${getMovementColor(movement.type)}`}>
                     {movement.amount}
