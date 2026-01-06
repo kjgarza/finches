@@ -850,6 +850,11 @@
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
