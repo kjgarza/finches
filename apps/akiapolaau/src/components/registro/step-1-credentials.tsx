@@ -6,8 +6,17 @@ import { zodResolver } from "@repo/ui"
 import * as z from "zod"
 import { Button } from "@repo/ui"
 import { Input } from "@repo/ui"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@repo/ui"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@repo/ui"
 import { ChevronRight, Eye, EyeOff } from "lucide-react"
+
+const securityQuestionOptions = [
+  "¿Cuál es el nombre de tu primera mascota?",
+  "¿En qué ciudad naciste?",
+  "¿Cuál es el segundo apellido de tu madre?",
+  "¿Cuál fue el modelo de tu primer auto?",
+  "¿Cuál es tu comida favorita?"
+] as const
 
 const step1Schema = z.object({
   name: z.string().min(3, "Mínimo 3 caracteres"),
@@ -15,6 +24,10 @@ const step1Schema = z.object({
   username: z.string().min(3, "Mínimo 3 caracteres").regex(/^[a-z0-9_]+$/, "Solo letras minúsculas, números y guiones bajos"),
   password: z.string().min(8, "Mínimo 8 caracteres").regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/, "Debe contener mayúscula, minúscula y número"),
   confirmPassword: z.string(),
+  securityQuestion1: z.string().min(1, "Selecciona una pregunta"),
+  securityAnswer1: z.string().min(3, "Respuesta demasiado corta"),
+  securityQuestion2: z.string().min(1, "Selecciona una pregunta"),
+  securityAnswer2: z.string().min(3, "Respuesta demasiado corta"),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Las contraseñas no coinciden",
   path: ["confirmPassword"],
@@ -31,12 +44,17 @@ export function Step1Credentials({ onNext, initialData }: Step1Props) {
 
   const form = useForm<z.infer<typeof step1Schema>>({
     resolver: zodResolver(step1Schema),
-    defaultValues: initialData || {
+    defaultValues: {
       name: "",
       email: "",
       username: "",
       password: "",
       confirmPassword: "",
+      securityQuestion1: "",
+      securityAnswer1: "",
+      securityQuestion2: "",
+      securityAnswer2: "",
+      ...initialData,
     },
   })
 
@@ -153,6 +171,91 @@ export function Step1Credentials({ onNext, initialData }: Step1Props) {
                       )}
                     </Button>
                   </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <div className="space-y-3">
+            <h3 className="font-semibold">Preguntas secretas</h3>
+            <p className="text-sm text-muted-foreground">
+              Configura dos preguntas de seguridad para recuperar tu cuenta.
+            </p>
+          </div>
+
+          <FormField
+            control={form.control}
+            name="securityQuestion1"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Pregunta secreta 1</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Selecciona una pregunta" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {securityQuestionOptions.map((question) => (
+                      <SelectItem key={question} value={question}>
+                        {question}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="securityAnswer1"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Respuesta 1</FormLabel>
+                <FormControl>
+                  <Input placeholder="Escribe tu respuesta" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="securityQuestion2"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Pregunta secreta 2</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Selecciona una pregunta distinta" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {securityQuestionOptions.map((question) => (
+                      <SelectItem key={question} value={question}>
+                        {question}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="securityAnswer2"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Respuesta 2</FormLabel>
+                <FormControl>
+                  <Input placeholder="Escribe tu respuesta" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

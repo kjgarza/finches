@@ -1,0 +1,29 @@
+{
+  "step1": {
+    "name": "María Elena Rodríguez López",
+    "email": "maria.rodriguez@example.com",
+    "username": "maria_rodriguez",
+    "password": "Demo2026!",
+    "confirmPassword": "Demo2026!",
+    "securityQuestion1": "¿Cuál es el nombre de tu primera mascota?",
+    "securityAnswer1": "Luna",
+    "securityQuestion2": "¿En qué ciudad naciste?",
+    "securityAnswer2": "Ciudad de México"
+  },
+  "step2": {
+    "curp": "ROLM850615MDFRPN08",
+    "entity": "Ciudad de México",
+    "gender": "F",
+    "dateOfBirth": "1985-06-15",
+    "rfc": "ROLM850615AB3",
+    "nationality": "Mexicana",
+    "residenceCountry": "México"
+  },
+  "step3": {
+    "bankAccount": {
+      "clabe": "012180001234567890",
+      "bankName": "BBVA México",
+      "accountHolder": "María Elena Rodríguez López"
+    }
+  }
+}

@@ -70,5 +70,15 @@
       "iFEvEVcv5lvFaZf0sM9ww"
     ],
     "updatedAt": "2025-12-07T14:42:40.155Z"
+  },
+  {
+    "id": "lIgOSP9jnrLd77c5IdMEm",
+    "userId": "G1wo3BGPpk2Us52iKtD-T",
+    "totalBalance": 0,
+    "totalInvested": 0,
+    "totalGain": 0,
+    "gainPercentage": 0,
+    "investments": [],
+    "updatedAt": "2026-01-10T11:39:57.141Z"
   }
 ]

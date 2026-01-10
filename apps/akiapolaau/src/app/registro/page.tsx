@@ -10,11 +10,16 @@ import { Step1Credentials } from "@/components/registro/step-1-credentials"
 import { Step2Personal } from "@/components/registro/step-2-personal"
 import { Step3Banking } from "@/components/registro/step-3-banking"
 import { Step4Contract } from "@/components/registro/step-4-contract"
+import prefillData from "../../../data/registro-prefill.json"
 
 export default function RegistroPage() {
   const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1)
-  const [formData, setFormData] = useState<any>({})
+  const [formData, setFormData] = useState<any>({
+    ...prefillData.step1,
+    ...prefillData.step2,
+    ...prefillData.step3
+  })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const steps = [

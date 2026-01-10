@@ -104,5 +104,25 @@
     "contractNumber": "CT-2024-005",
     "createdAt": "2025-12-07T14:42:40.151Z",
     "updatedAt": "2025-12-07T14:42:40.151Z"
+  },
+  {
+    "id": "G1wo3BGPpk2Us52iKtD-T",
+    "email": "maria.rodriguez@example.com",
+    "username": "maria_rodriguez",
+    "password": "Demo2026!",
+    "name": "María Elena Rodríguez López",
+    "curp": "ROLM850615MDFRPN08",
+    "rfc": "ROLM850615AB3",
+    "dateOfBirth": "1985-06-15",
+    "gender": "F",
+    "entity": "Ciudad de México",
+    "bankAccount": {
+      "clabe": "012180001234567890",
+      "bankName": "BBVA México",
+      "accountHolder": "María Elena Rodríguez López"
+    },
+    "contractNumber": "CT-2026-G1wo3B",
+    "createdAt": "2026-01-10T11:39:57.139Z",
+    "updatedAt": "2026-01-10T11:39:57.139Z"
   }
 ]

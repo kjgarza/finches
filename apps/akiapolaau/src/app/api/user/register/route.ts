@@ -35,6 +35,18 @@ async function handler(req: NextRequest) {
       gender: body.gender,
       entity: body.entity,
       bankAccount: body.bankAccount,
+      nationality: body.nationality,
+      residenceCountry: body.residenceCountry,
+      securityQuestions: [
+        {
+          question: body.securityQuestion1,
+          answer: body.securityAnswer1,
+        },
+        {
+          question: body.securityQuestion2,
+          answer: body.securityAnswer2,
+        },
+      ],
       contractNumber: `CT-${new Date().getFullYear()}-${userId.slice(0, 6)}`,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),

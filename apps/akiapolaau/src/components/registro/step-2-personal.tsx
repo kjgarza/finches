@@ -19,6 +19,9 @@ const mexicanStates = [
   "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"
 ] as const
 
+const nationalities = ["Mexicana", "Estadounidense", "Canadiense", "Otra"] as const
+const residenceCountries = ["México", "Estados Unidos", "Canadá", "Otro"] as const
+
 const formSchema = z.object({
   curp: z.string()
     .min(18, "El CURP debe tener 18 caracteres")
@@ -30,7 +33,9 @@ const formSchema = z.object({
   rfc: z.string()
     .min(12, "El RFC debe tener al menos 12 caracteres")
     .max(13, "El RFC debe tener máximo 13 caracteres")
-    .regex(/^[A-Z]{3,4}\d{6}[A-Z0-9]{3}$/, "RFC inválido")
+    .regex(/^[A-Z]{3,4}\d{6}[A-Z0-9]{3}$/, "RFC inválido"),
+  nationality: z.string().min(1, "Selecciona tu nacionalidad"),
+  residenceCountry: z.string().min(1, "Selecciona tu país de residencia"),
 })
 
 type FormValues = z.infer<typeof formSchema>
@@ -43,12 +48,15 @@ interface Step2Props {
 export function Step2Personal({ onNext, initialData }: Step2Props) {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: initialData || {
+    defaultValues: {
       curp: "",
       entity: "",
       gender: undefined,
       dateOfBirth: "",
-      rfc: ""
+      rfc: "",
+      nationality: "",
+      residenceCountry: "",
+      ...initialData,
     },
   })
 
@@ -136,6 +144,56 @@ export function Step2Personal({ onNext, initialData }: Step2Props) {
                   </FormItem>
                 </RadioGroup>
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="nationality"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nacionalidad</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Selecciona tu nacionalidad" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {nationalities.map((nationality) => (
+                    <SelectItem key={nationality} value={nationality}>
+                      {nationality}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="residenceCountry"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>País de residencia</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Selecciona tu país de residencia" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {residenceCountries.map((country) => (
+                    <SelectItem key={country} value={country}>
+                      {country}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}
