@@ -34,6 +34,7 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^24.10.1",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
