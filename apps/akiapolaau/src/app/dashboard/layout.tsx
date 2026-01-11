@@ -7,14 +7,15 @@ import { Button } from "@repo/ui"
 import { Avatar, AvatarFallback } from "@repo/ui"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@repo/ui"
 import { VisuallyHidden } from "@repo/ui"
-import { 
+import {
   Wallet,
-  Repeat, 
-  FileText, 
+  Repeat,
+  FileText,
   Send,
   Activity,
   Settings,
   HelpCircle,
+  Info,
   Menu,
   Bell,
   Plus
@@ -38,6 +39,7 @@ export default function DashboardLayout({
     { href: "/dashboard/movimientos", label: "Movimientos", icon: Activity },
     { href: "/dashboard/configuracion", label: "Configuración", icon: Settings },
     { href: "/dashboard/ayuda", label: "Ayuda", icon: HelpCircle },
+    { href: "/dashboard/acerca-de", label: "Acerca de", icon: Info },
   ]
 
   const SidebarContent = () => (
