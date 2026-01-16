@@ -59,7 +59,7 @@ export function SummaryCards() {
               <p className="text-2xl font-bold">{card.value}</p>
               {card.trend !== undefined && (
                 <span className={`text-xs font-medium ${
-                  card.trend > 0 ? "text-emerald-600" : "text-red-600"
+                  card.trend > 0 ? "text-success" : "text-loss"
                 }`}>
                   {card.trend > 0 ? "+" : ""}{card.trend}%
                 </span>

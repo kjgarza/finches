@@ -31,7 +31,7 @@ export default function ConfiguracionPage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-info/10">
-                  <User className="h-5 w-5 text-blue-600" />
+                  <User className="h-5 w-5 text-info" />
                 </div>
                 <div>
                   <CardTitle>Información Personal</CardTitle>
@@ -66,7 +66,7 @@ export default function ConfiguracionPage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-accent">
-                  <Bell className="h-5 w-5 text-purple-600" />
+                  <Bell className="h-5 w-5 text-accent" />
                 </div>
                 <div>
                   <CardTitle>Notificaciones</CardTitle>
@@ -137,7 +137,7 @@ export default function ConfiguracionPage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-success/10">
-                  <Shield className="h-5 w-5 text-emerald-600" />
+                  <Shield className="h-5 w-5 text-success" />
                 </div>
                 <div>
                   <CardTitle>Seguridad</CardTitle>
@@ -178,7 +178,7 @@ export default function ConfiguracionPage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-warning/10">
-                  <Globe className="h-5 w-5 text-amber-600" />
+                  <Globe className="h-5 w-5 text-warning" />
                 </div>
                 <div>
                   <CardTitle className="text-base">Preferencias</CardTitle>
@@ -223,7 +223,7 @@ export default function ConfiguracionPage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-info/10">
-                  <CreditCard className="h-5 w-5 text-blue-600" />
+                  <CreditCard className="h-5 w-5 text-info" />
                 </div>
                 <div>
                   <CardTitle className="text-base">Métodos de Pago</CardTitle>
@@ -253,7 +253,7 @@ export default function ConfiguracionPage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-accent">
-                  <Smartphone className="h-5 w-5 text-purple-600" />
+                  <Smartphone className="h-5 w-5 text-accent" />
                 </div>
                 <div>
                   <CardTitle className="text-base">Dispositivos</CardTitle>

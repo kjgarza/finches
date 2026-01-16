@@ -42,7 +42,7 @@ export default function EnvioRecursosPage() {
           <CardHeader>
             <div className="flex items-center gap-2">
               <div className="p-2 rounded-lg bg-info/10">
-                <Building2 className="h-5 w-5 text-blue-600" />
+                <Building2 className="h-5 w-5 text-info" />
               </div>
               <div>
                 <CardTitle>Transferencia Bancaria</CardTitle>
@@ -70,7 +70,7 @@ export default function EnvioRecursosPage() {
                   onClick={() => handleCopy(bankAccount.clabe)}
                 >
                   {copied ? (
-                    <Check className="h-4 w-4 text-emerald-600" />
+                    <Check className="h-4 w-4 text-success" />
                   ) : (
                     <Copy className="h-4 w-4" />
                   )}
@@ -101,7 +101,7 @@ export default function EnvioRecursosPage() {
 
             <Card className="border-blue-200 bg-info/5">
               <CardContent className="flex items-start gap-2 p-3">
-                <Info className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                <Info className="h-4 w-4 text-info mt-0.5 shrink-0" />
                 <div className="space-y-1">
                   <p className="text-xs font-medium">Tiempo de procesamiento</p>
                   <p className="text-xs text-muted-foreground">
@@ -118,7 +118,7 @@ export default function EnvioRecursosPage() {
           <CardHeader>
             <div className="flex items-center gap-2">
               <div className="p-2 rounded-lg bg-success/10">
-                <CreditCard className="h-5 w-5 text-emerald-600" />
+                <CreditCard className="h-5 w-5 text-success" />
               </div>
               <div>
                 <CardTitle>Depósito con Tarjeta</CardTitle>
@@ -175,7 +175,7 @@ export default function EnvioRecursosPage() {
 
             <Card className="border-amber-200 bg-warning/5">
               <CardContent className="flex items-start gap-2 p-3">
-                <Info className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+                <Info className="h-4 w-4 text-warning mt-0.5 shrink-0" />
                 <div className="space-y-1">
                   <p className="text-xs font-medium">Disponibilidad inmediata</p>
                   <p className="text-xs text-muted-foreground">
@@ -204,7 +204,7 @@ export default function EnvioRecursosPage() {
               <div key={i} className="flex items-center justify-between p-3 border rounded-lg">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-success/10">
-                    <ArrowUpRight className="h-4 w-4 text-emerald-600" />
+                    <ArrowUpRight className="h-4 w-4 text-success" />
                   </div>
                   <div>
                     <p className="font-semibold">{deposit.amount}</p>
@@ -212,7 +212,7 @@ export default function EnvioRecursosPage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <Badge variant="outline" className="bg-emerald-50 text-emerald-700">
+                  <Badge variant="outline" className="bg-success/5 text-success">
                     {deposit.status}
                   </Badge>
                   <p className="text-xs text-muted-foreground mt-1">{deposit.date}</p>

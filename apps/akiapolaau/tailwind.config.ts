@@ -64,6 +64,10 @@ const config: Config = {
   			warning: {
   				DEFAULT: 'hsl(var(--warning))',
   				foreground: 'hsl(var(--warning-foreground))'
+  			},
+  			loss: {
+  				DEFAULT: 'hsl(var(--loss))',
+  				foreground: 'hsl(var(--loss-foreground))'
   			}
   		},
   		borderRadius: {

@@ -51,7 +51,7 @@ export function InvestmentSummary({
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Tasa:</span>
-            <span className="font-semibold text-emerald-600">
+            <span className="font-semibold text-success">
               {data.rate}% anual
             </span>
           </div>
@@ -59,7 +59,7 @@ export function InvestmentSummary({
           <div className="border-t pt-3 mt-3">
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Rendimiento estimado:</span>
-              <span className="font-semibold text-emerald-600">
+              <span className="font-semibold text-success">
                 +${data.estimatedYield.toLocaleString("es-MX", { minimumFractionDigits: 2 })}
               </span>
             </div>
@@ -74,7 +74,7 @@ export function InvestmentSummary({
 
         {/* Alert */}
         <Alert variant="default" className="border-blue-200 bg-info/10">
-          <Info className="h-4 w-4 text-blue-600" />
+          <Info className="h-4 w-4 text-info" />
           <AlertDescription className="text-xs text-info-foreground">
             La inversión se procesará el día de la subasta seleccionada.
           </AlertDescription>

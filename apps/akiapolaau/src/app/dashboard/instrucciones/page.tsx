@@ -38,9 +38,9 @@ export default function InstruccionesPage() {
   ]
 
   const statusColors = {
-    "Pendiente": "bg-amber-50 text-amber-700 border-amber-200",
-    "Procesada": "bg-blue-50 text-blue-700 border-blue-200",
-    "Completada": "bg-emerald-50 text-emerald-700 border-emerald-200"
+    "Pendiente": "bg-warning/5 text-warning border-warning/20",
+    "Procesada": "bg-info/5 text-info border-info/20",
+    "Completada": "bg-success/5 text-success border-success/20"
   }
 
   return (
@@ -68,7 +68,7 @@ export default function InstruccionesPage() {
                 <p className="text-2xl font-bold">2</p>
               </div>
               <div className="p-3 rounded-lg bg-warning/10">
-                <Clock className="h-5 w-5 text-amber-600" />
+                <Clock className="h-5 w-5 text-warning" />
               </div>
             </div>
           </CardContent>
@@ -82,7 +82,7 @@ export default function InstruccionesPage() {
                 <p className="text-2xl font-bold">5</p>
               </div>
               <div className="p-3 rounded-lg bg-info/10">
-                <FileText className="h-5 w-5 text-blue-600" />
+                <FileText className="h-5 w-5 text-info" />
               </div>
             </div>
           </CardContent>
@@ -96,7 +96,7 @@ export default function InstruccionesPage() {
                 <p className="text-2xl font-bold">15</p>
               </div>
               <div className="p-3 rounded-lg bg-success/10">
-                <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+                <CheckCircle2 className="h-5 w-5 text-success" />
               </div>
             </div>
           </CardContent>
@@ -172,7 +172,7 @@ export default function InstruccionesPage() {
             <div className="p-4 border rounded-lg space-y-2">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-info/10">
-                  <FileText className="h-4 w-4 text-blue-600" />
+                  <FileText className="h-4 w-4 text-info" />
                 </div>
                 <h3 className="font-semibold">Compra</h3>
               </div>
@@ -184,7 +184,7 @@ export default function InstruccionesPage() {
             <div className="p-4 border rounded-lg space-y-2">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-success/10">
-                  <Download className="h-4 w-4 text-emerald-600" />
+                  <Download className="h-4 w-4 text-success" />
                 </div>
                 <h3 className="font-semibold">Retiro</h3>
               </div>
@@ -196,7 +196,7 @@ export default function InstruccionesPage() {
             <div className="p-4 border rounded-lg space-y-2">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-warning/10">
-                  <Clock className="h-4 w-4 text-amber-600" />
+                  <Clock className="h-4 w-4 text-warning" />
                 </div>
                 <h3 className="font-semibold">Renovación</h3>
               </div>
@@ -208,7 +208,7 @@ export default function InstruccionesPage() {
             <div className="p-4 border rounded-lg space-y-2">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-accent">
-                  <CheckCircle2 className="h-4 w-4 text-purple-600" />
+                  <CheckCircle2 className="h-4 w-4 text-accent" />
                 </div>
                 <h3 className="font-semibold">Cancelación</h3>
               </div>

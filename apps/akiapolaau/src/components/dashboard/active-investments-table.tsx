@@ -106,7 +106,7 @@ export function ActiveInvestmentsTable() {
                     })}
                   </TableCell>
                   <TableCell>
-                    <span className="text-emerald-600 font-medium">
+                    <span className="text-success font-medium">
                       {investment.yield}
                     </span>
                   </TableCell>

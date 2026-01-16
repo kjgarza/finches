@@ -1,0 +1,46 @@
+@layer components {
+  /* Container patterns (8+ occurrences) */
+  .app-container {
+    @apply container mx-auto px-4;
+  }
+
+  .app-section {
+    @apply container mx-auto px-4 py-24;
+  }
+
+  /* Section header pattern (5+ occurrences) */
+  .section-header {
+    @apply text-center mb-16;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-tight mb-4;
+  }
+
+  .section-description {
+    @apply text-muted-foreground max-w-2xl mx-auto;
+  }
+
+  /* Dashboard page wrapper */
+  .dashboard-page {
+    @apply flex flex-1 flex-col gap-4 p-4 md:gap-6 md:p-6;
+  }
+
+  /* Metric card icon wrapper (12+ occurrences) */
+  .metric-icon-wrapper {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center;
+  }
+
+  /* Currency input pattern (6 occurrences) */
+  .currency-input-wrapper {
+    @apply relative;
+  }
+
+  .currency-input-icon {
+    @apply absolute left-3 top-2.5 h-4 w-4 text-muted-foreground;
+  }
+
+  .currency-input-field {
+    @apply pl-10;
+  }
+}

@@ -118,7 +118,7 @@ export default function NuevaInversionPage() {
                       <p className="text-sm text-muted-foreground mb-2">
                         {instrument.description}
                       </p>
-                      <div className="flex items-center gap-1 text-emerald-600 font-semibold">
+                      <div className="flex items-center gap-1 text-success font-semibold">
                         <TrendingUp className="h-4 w-4" />
                         {instrument.rate}% anual
                       </div>
@@ -160,10 +160,10 @@ export default function NuevaInversionPage() {
                   onChange={(e) => setAuctionDate(e.target.value)}
                 />
               </div>
-              <Card className="bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
+              <Card className="bg-info/5 border-info/20">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-2 mb-1">
-                    <Calendar className="h-4 w-4 text-blue-600" />
+                    <Calendar className="h-4 w-4 text-info" />
                     <span className="text-sm font-medium">Próxima Subasta</span>
                   </div>
                   <p className="text-lg font-semibold">15 Dic 2024</p>
@@ -283,7 +283,7 @@ export default function NuevaInversionPage() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Tasa:</span>
-                  <span className="font-medium text-emerald-600">
+                  <span className="font-medium text-success">
                     {selectedInstrumentData ? `${selectedInstrumentData.rate}%` : "-"}
                   </span>
                 </div>
@@ -291,7 +291,7 @@ export default function NuevaInversionPage() {
                 <div className="border-t pt-3">
                   <div className="flex justify-between text-sm mb-2">
                     <span className="text-muted-foreground">Rendimiento estimado:</span>
-                    <span className="font-semibold text-emerald-600">
+                    <span className="font-semibold text-success">
                       ${estimatedYield}
                     </span>
                   </div>
@@ -304,8 +304,8 @@ export default function NuevaInversionPage() {
                 </div>
               </div>
 
-              <Alert className="border-blue-200 bg-blue-50 dark:bg-blue-950">
-                <Info className="h-4 w-4 text-blue-600" />
+              <Alert className="bg-info/5 border-info/20">
+                <Info className="h-4 w-4 text-info" />
                 <AlertDescription className="text-xs">
                   La inversión se procesará el día de la subasta seleccionada.
                 </AlertDescription>

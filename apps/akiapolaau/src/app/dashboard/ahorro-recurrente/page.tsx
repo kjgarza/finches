@@ -63,7 +63,7 @@ export default function AhorroRecurrentePage() {
                     <CardTitle className="text-lg">{plan.name}</CardTitle>
                     <CardDescription>{plan.instrument}</CardDescription>
                   </div>
-                  <Badge variant="secondary" className="bg-emerald-50 text-emerald-700">
+                  <Badge variant="secondary" className="bg-success/5 text-success">
                     {plan.status}
                   </Badge>
                 </div>
@@ -112,7 +112,7 @@ export default function AhorroRecurrentePage() {
       <Card className="rounded-xl border-info/20 bg-gradient-to-br from-info/5 to-transparent">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Repeat className="h-5 w-5 text-blue-600" />
+            <Repeat className="h-5 w-5 text-info" />
             Beneficios del Ahorro Recurrente
           </CardTitle>
         </CardHeader>
@@ -121,7 +121,7 @@ export default function AhorroRecurrentePage() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-info/10">
-                  <TrendingUp className="h-4 w-4 text-blue-600" />
+                  <TrendingUp className="h-4 w-4 text-info" />
                 </div>
                 <h3 className="font-semibold">Disciplina Financiera</h3>
               </div>
@@ -132,7 +132,7 @@ export default function AhorroRecurrentePage() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-success/10">
-                  <DollarSign className="h-4 w-4 text-emerald-600" />
+                  <DollarSign className="h-4 w-4 text-success" />
                 </div>
                 <h3 className="font-semibold">Compra Promediada</h3>
               </div>
@@ -143,7 +143,7 @@ export default function AhorroRecurrentePage() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-warning/10">
-                  <Calendar className="h-4 w-4 text-amber-600" />
+                  <Calendar className="h-4 w-4 text-warning" />
                 </div>
                 <h3 className="font-semibold">Flexibilidad Total</h3>
               </div>

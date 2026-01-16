@@ -66,7 +66,7 @@ export function InvestmentDetails({
                   )}
                 >
                   <div className="p-2 rounded-lg bg-info/10 shrink-0">
-                    <Building2 className="h-5 w-5 text-blue-600" />
+                    <Building2 className="h-5 w-5 text-info" />
                   </div>
                   <div>
                     <p className="font-semibold">Envío de recursos (SPEI)</p>
@@ -90,7 +90,7 @@ export function InvestmentDetails({
                   )}
                 >
                   <div className="p-2 rounded-lg bg-success/10 shrink-0">
-                    <CreditCard className="h-5 w-5 text-emerald-600" />
+                    <CreditCard className="h-5 w-5 text-success" />
                   </div>
                   <div>
                     <p className="font-semibold">Domiciliación</p>

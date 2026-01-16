@@ -60,10 +60,10 @@ export default function MovimientosPage() {
     switch (type) {
       case "Depósito":
       case "Rendimiento":
-        return <ArrowDownLeft className="h-4 w-4 text-emerald-600" />
+        return <ArrowDownLeft className="h-4 w-4 text-success" />
       case "Retiro":
       case "Inversión":
-        return <ArrowUpRight className="h-4 w-4 text-blue-600" />
+        return <ArrowUpRight className="h-4 w-4 text-info" />
       default:
         return <Repeat className="h-4 w-4 text-muted-foreground" />
     }
@@ -73,10 +73,10 @@ export default function MovimientosPage() {
     switch (type) {
       case "Depósito":
       case "Rendimiento":
-        return "text-emerald-600"
+        return "text-success"
       case "Retiro":
       case "Inversión":
-        return "text-blue-600"
+        return "text-info"
       default:
         return "text-muted-foreground"
     }
@@ -104,10 +104,10 @@ export default function MovimientosPage() {
             <div className="flex items-center justify-between">
               <div className="min-w-0 flex-1 pr-2">
                 <p className="text-sm font-medium text-muted-foreground">Ingresos</p>
-                <p className="text-2xl font-bold text-emerald-600">+$52,890</p>
+                <p className="text-2xl font-bold text-success">+$52,890</p>
               </div>
               <div className="p-3 rounded-lg bg-success/10 shrink-0">
-                <ArrowDownLeft className="h-5 w-5 text-emerald-600" />
+                <ArrowDownLeft className="h-5 w-5 text-success" />
               </div>
             </div>
           </CardContent>
@@ -118,10 +118,10 @@ export default function MovimientosPage() {
             <div className="flex items-center justify-between">
               <div className="min-w-0 flex-1 pr-2">
                 <p className="text-sm font-medium text-muted-foreground">Egresos</p>
-                <p className="text-2xl font-bold text-blue-600">-$45,000</p>
+                <p className="text-2xl font-bold text-info">-$45,000</p>
               </div>
               <div className="p-3 rounded-lg bg-info/10 shrink-0">
-                <ArrowUpRight className="h-5 w-5 text-blue-600" />
+                <ArrowUpRight className="h-5 w-5 text-info" />
               </div>
             </div>
           </CardContent>
@@ -135,7 +135,7 @@ export default function MovimientosPage() {
                 <p className="text-2xl font-bold">127</p>
               </div>
               <div className="p-3 rounded-lg bg-accent shrink-0">
-                <Repeat className="h-5 w-5 text-purple-600" />
+                <Repeat className="h-5 w-5 text-accent" />
               </div>
             </div>
           </CardContent>
@@ -145,7 +145,7 @@ export default function MovimientosPage() {
           <CardContent className="p-6">
             <div className="min-w-0">
               <p className="text-sm font-medium text-muted-foreground">Balance Neto</p>
-              <p className="text-2xl font-bold text-emerald-600">+$7,890</p>
+              <p className="text-2xl font-bold text-success">+$7,890</p>
               <p className="text-xs text-muted-foreground mt-1">Este mes</p>
             </div>
           </CardContent>

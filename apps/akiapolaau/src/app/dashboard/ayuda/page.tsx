@@ -83,7 +83,7 @@ export default function AyudaPage() {
         <Card className="rounded-xl hover:shadow-lg transition-shadow cursor-pointer">
           <CardContent className="p-6 flex flex-col items-center text-center gap-3">
             <div className="p-4 rounded-full bg-info/10">
-              <MessageCircle className="h-6 w-6 text-blue-600" />
+              <MessageCircle className="h-6 w-6 text-info" />
             </div>
             <div>
               <h3 className="font-semibold">Chat en Vivo</h3>
@@ -101,7 +101,7 @@ export default function AyudaPage() {
         <Card className="rounded-xl hover:shadow-lg transition-shadow cursor-pointer">
           <CardContent className="p-6 flex flex-col items-center text-center gap-3">
             <div className="p-4 rounded-full bg-success/10">
-              <Phone className="h-6 w-6 text-emerald-600" />
+              <Phone className="h-6 w-6 text-success" />
             </div>
             <div>
               <h3 className="font-semibold">Teléfono</h3>
@@ -117,7 +117,7 @@ export default function AyudaPage() {
         <Card className="rounded-xl hover:shadow-lg transition-shadow cursor-pointer">
           <CardContent className="p-6 flex flex-col items-center text-center gap-3">
             <div className="p-4 rounded-full bg-accent">
-              <Mail className="h-6 w-6 text-purple-600" />
+              <Mail className="h-6 w-6 text-accent" />
             </div>
             <div>
               <h3 className="font-semibold">Email</h3>
@@ -150,7 +150,7 @@ export default function AyudaPage() {
                 >
                   <div className="flex items-start gap-3">
                     <div className="p-2 rounded-lg bg-info/10">
-                      <Icon className="h-5 w-5 text-blue-600" />
+                      <Icon className="h-5 w-5 text-info" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold mb-1">{guide.title}</h3>
@@ -209,7 +209,7 @@ export default function AyudaPage() {
               </Button>
             </div>
             <div className="hidden md:block p-4 rounded-full bg-info/10">
-              <BookOpen className="h-8 w-8 text-blue-600" />
+              <BookOpen className="h-8 w-8 text-info" />
             </div>
           </div>
         </CardContent>

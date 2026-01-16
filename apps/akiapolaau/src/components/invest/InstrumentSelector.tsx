@@ -63,7 +63,7 @@ export function InstrumentSelector({
                   </Badge>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-emerald-600">
+                  <span className="text-2xl font-bold text-success">
                     {instrument.rate}%
                   </span>
                   <span className="text-xs text-muted-foreground">anual</span>

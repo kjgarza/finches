@@ -39,7 +39,7 @@ export function AuctionSelector({ value, onChange, nextAuction }: AuctionSelecto
           <Card className="border-blue-200 bg-info/10">
             <CardContent className="p-4">
               <div className="flex items-start gap-2">
-                <Calendar className="h-5 w-5 text-blue-600 mt-0.5" />
+                <Calendar className="h-5 w-5 text-info mt-0.5" />
                 <div>
                   <p className="text-sm font-semibold text-info-foreground">
                     Próxima Subasta
