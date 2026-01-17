@@ -9,7 +9,7 @@ export function Footer() {
 
       <div className="container mx-auto px-4 py-8">
         {/* Contact & Info */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left text-sm text-muted-foreground mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-center text-sm text-muted-foreground mb-6">
           <div>
             <p className="font-semibold text-trust mb-2">Atención a Clientes</p>
             <p>{siteInfo.contact.phone}</p>
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
           <div>
             <p className="font-semibold text-trust mb-2">Redes Sociales</p>
-            <div className="flex gap-4 justify-center md:justify-start mt-2 flex-wrap">
+            <div className="flex gap-4 justify-center md:justify-center mt-2 flex-wrap">
               <Link href={siteInfo.social.facebook} target="_blank" className="hover:text-trust transition-colors underline-offset-4 hover:underline">
                 Facebook
               </Link>

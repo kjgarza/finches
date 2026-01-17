@@ -16,6 +16,19 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Escudo Background - spans across page */}
+      <div className="fixed right-0 top-0 w-full h-full pointer-events-none overflow-hidden z-0">
+        <Image
+          src="/escudo.svg"
+          alt=""
+          width={1200}
+          height={1200}
+          priority={false}
+          className="absolute -right-72 top-0 w-[700px] h-auto opacity-15 md:w-[900px] md:-right-88 lg:w-[1100px] lg:-right-94"
+          style={{ filter: "sepia(0.3) saturate(1.2) hue-rotate(10deg)" }}
+        />
+      </div>
+
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -27,6 +40,9 @@ export default function HomePage() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-2 items-center">
+            <Link href="/acerca-de">
+              <Button variant="ghost">Acerca de</Button>
+            </Link>
             <Link href="/registro">
               <Button variant="ghost">Abrir Cuenta</Button>
             </Link>
@@ -49,6 +65,11 @@ export default function HomePage() {
                   <SheetTitle>Menú de navegación</SheetTitle>
                 </VisuallyHidden>
                 <nav className="flex flex-col gap-4 mt-8">
+                  <Link href="/acerca-de" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="ghost" className="w-full justify-start text-base h-12">
+                      Acerca de
+                    </Button>
+                  </Link>
                   <Link href="/registro" onClick={() => setMobileMenuOpen(false)}>
                     <Button variant="ghost" className="w-full justify-start text-base h-12">
                       Abrir Cuenta
@@ -67,8 +88,8 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-24 lg:py-32">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section className="relative container mx-auto px-4 py-24 lg:py-32">
+        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <div className="inline-flex items-center rounded-lg bg-trust/10 border border-trust/20 px-4 py-2 text-sm font-medium text-trust">
             <Shield className="h-4 w-4 mr-2" />
             Inversiones respaldadas por el gobierno mexicano
@@ -106,7 +127,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Card className="card-feature group">
+            <Card className="card-feature group z-10">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-trust to-accent flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-trust/20 transition-shadow">
                   <Shield className="h-6 w-6 text-white" />
@@ -119,7 +140,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="card-feature group">
+            <Card className="card-feature group z-10">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-success to-success/70 flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-success/20 transition-shadow">
                   <DollarSign className="h-6 w-6 text-success-foreground" />
@@ -132,7 +153,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="card-feature group">
+            <Card className="card-feature group z-10">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-trust to-accent flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-trust/20 transition-shadow">
                   <TrendingUp className="h-6 w-6 text-white" />
@@ -145,7 +166,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="card-feature group">
+            <Card className="card-feature group z-10">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-warning to-warning/70 flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-warning/20 transition-shadow">
                   <Clock className="h-6 w-6 text-warning-foreground" />
@@ -197,7 +218,7 @@ export default function HomePage() {
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="card-feature">
+          <Card className="card-feature z-10">
             <CardHeader>
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-trust to-accent text-white flex items-center justify-center font-bold text-2xl mb-4 shadow-lg shadow-trust/20">
                 3
@@ -239,7 +260,7 @@ export default function HomePage() {
                 <p className="text-sm text-muted-foreground">Pesos invertidos</p>
               </CardContent>
             </Card>
-            <Card className="text-center border-2 border-trust/20 hover:border-trust/40 transition-colors">
+            <Card className="text-center border-2 border-trust/20 hover:border-trust/40 transition-colors z-10">
               <CardContent className="pt-8 pb-6">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-trust to-accent flex items-center justify-center shadow-lg shadow-trust/20">
                   <Building2 className="h-8 w-8 text-white" />
@@ -297,7 +318,7 @@ export default function HomePage() {
               </div>
             </CardContent>
           </Card>
-          <Card className="card-feature border-t-4 border-t-trust">
+          <Card className="card-feature border-t-4 border-t-trust z-10">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-trust to-accent flex items-center justify-center shadow-lg shadow-trust/20 mb-2">
