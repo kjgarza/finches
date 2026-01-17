@@ -68,9 +68,9 @@ export default function RegistroPage() {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <header className="border-b bg-background">
+      <header className="border-b border-trust/20 bg-background">
         <div className="container mx-auto px-4 py-4">
-          <Link href="/" className="text-2xl font-bold text-trust">
+          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-trust to-accent bg-clip-text text-transparent">
             Cetesdirecto
           </Link>
         </div>
@@ -84,9 +84,9 @@ export default function RegistroPage() {
               <div key={step.number} className="flex items-center flex-1">
                 <div className="flex flex-col items-center">
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
                       currentStep >= step.number
-                        ? "bg-trust text-trust-foreground"
+                        ? "bg-gradient-to-br from-trust to-accent text-white shadow-lg shadow-trust/20"
                         : "bg-muted text-muted-foreground"
                     }`}
                   >
@@ -96,12 +96,12 @@ export default function RegistroPage() {
                       step.number
                     )}
                   </div>
-                  <span className="text-xs mt-2 text-center">{step.title}</span>
+                  <span className={`text-xs mt-2 text-center ${currentStep >= step.number ? "text-trust font-medium" : ""}`}>{step.title}</span>
                 </div>
                 {index < steps.length - 1 && (
                   <div
-                    className={`flex-1 h-1 mx-2 ${
-                      currentStep > step.number ? "bg-trust" : "bg-muted"
+                    className={`flex-1 h-1 mx-2 rounded-full transition-colors duration-300 ${
+                      currentStep > step.number ? "bg-gradient-to-r from-trust to-accent" : "bg-muted"
                     }`}
                   />
                 )}

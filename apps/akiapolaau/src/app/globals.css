@@ -4,39 +4,76 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* gob.mx Wine Color Palette */
+    --background: 0 0% 95%;
+    --foreground: 334 54% 13%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 334 54% 13%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --popover-foreground: 334 54% 13%;
+    --primary: 343 71% 29%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --secondary: 340 20% 92%;
+    --secondary-foreground: 334 54% 13%;
+    --muted: 340 10% 93%;
+    --muted-foreground: 334 30% 40%;
+    --accent: 340 60% 37%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 340 15% 85%;
+    --input: 340 15% 85%;
+    --ring: 343 71% 29%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    /* Brand colors */
-    --trust: 214 100% 50%;
+    --chart-1: 343 71% 29%;
+    --chart-2: 340 60% 37%;
+    --chart-3: 334 54% 13%;
+    --chart-4: 142 71% 45%;
+    --chart-5: 38 92% 50%;
+    /* Brand colors - Mexican Government Palette */
+    --trust: 343 71% 29%;
     --trust-foreground: 0 0% 100%;
-    --info: 199 89% 48%;
+    --info: 340 60% 37%;
     --info-foreground: 0 0% 100%;
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 334 54% 8%;
+    --foreground: 0 0% 95%;
+    --card: 334 54% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 334 54% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 343 60% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 334 40% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 334 40% 15%;
+    --muted-foreground: 340 20% 65%;
+    --accent: 340 50% 50%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 334 40% 20%;
+    --input: 334 40% 20%;
+    --ring: 343 60% 45%;
+    --chart-1: 343 60% 45%;
+    --chart-2: 340 50% 50%;
+    --chart-3: 334 40% 30%;
+    --chart-4: 142 60% 50%;
+    --chart-5: 38 80% 55%;
+    /* Brand colors - Dark mode */
+    --trust: 343 60% 45%;
+    --trust-foreground: 0 0% 100%;
+    --info: 340 50% 50%;
+    --info-foreground: 0 0% 100%;
+    --success: 142 60% 50%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 80% 55%;
     --warning-foreground: 0 0% 100%;
   }
 
@@ -48,6 +85,11 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), ui-serif, Georgia, serif;
   }
 }
 
@@ -81,7 +123,44 @@
 
   /* Metric card icon wrapper (12+ occurrences) */
   .metric-icon-wrapper {
-    @apply w-12 h-12 rounded-lg flex items-center justify-center;
+    @apply w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-trust to-accent text-white;
+  }
+
+  /* Feature card hover effect */
+  .card-feature {
+    @apply border-2 transition-all duration-300 hover:border-trust/50 hover:shadow-lg hover:shadow-trust/10 hover:-translate-y-1;
+  }
+
+  /* Wine gradient backgrounds */
+  .bg-gradient-wine {
+    background: linear-gradient(135deg, hsl(var(--trust)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .bg-gradient-wine-soft {
+    background: linear-gradient(135deg, hsl(var(--trust) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
+  }
+
+  /* Institutional accent border */
+  .border-accent-top {
+    @apply border-t-4 border-trust;
+  }
+
+  /* Wine shadow glow effect */
+  .shadow-wine {
+    box-shadow: 0 10px 40px -10px hsl(var(--trust) / 0.3);
+  }
+
+  /* Sidebar navigation styles */
+  .sidebar-wine {
+    @apply bg-trust text-white;
+  }
+
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-white/80 hover:bg-white/10;
+  }
+
+  .sidebar-nav-item-active {
+    @apply bg-white/20 text-white font-medium;
   }
 
   /* Currency input pattern (6 occurrences) */

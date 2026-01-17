@@ -1,12 +1,22 @@
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
+import { Playfair_Display, Source_Sans_3 } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@repo/ui"
 import { InstallPWAPrompt } from "@/components/install-pwa-prompt"
 import { PWARegister } from "@/components/pwa-register"
 
-const inter = Inter({ subsets: ["latin"] })
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+})
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Cetesdirecto - Inversiones Inteligentes",
@@ -55,8 +65,8 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" }
+    { media: "(prefers-color-scheme: light)", color: "#611232" },
+    { media: "(prefers-color-scheme: dark)", color: "#3A0B1E" }
   ],
 }
 
@@ -67,7 +77,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={`${sourceSans.variable} ${playfair.variable} font-sans`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

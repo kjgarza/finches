@@ -7,7 +7,6 @@ import { Button } from "@repo/ui"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@repo/ui"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@repo/ui"
 import { VisuallyHidden } from "@repo/ui"
-import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Footer } from "@/components/footer"
 import { TrendingUp, Shield, Clock, DollarSign, ArrowRight, Users, Building2, CheckCircle2, Menu } from "lucide-react"
 import siteInfo from "@/data/site-info.json"
@@ -28,7 +27,6 @@ export default function HomePage() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-2 items-center">
-            <ThemeSwitcher />
             <Link href="/registro">
               <Button variant="ghost">Abrir Cuenta</Button>
             </Link>
@@ -39,7 +37,6 @@ export default function HomePage() {
 
           {/* Mobile Navigation */}
           <div className="flex md:hidden gap-2 items-center">
-            <ThemeSwitcher />
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="h-11 w-11">
@@ -72,25 +69,26 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-24 lg:py-32">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium">
-            🏛️ Inversiones respaldadas por el gobierno mexicano
+          <div className="inline-flex items-center rounded-lg bg-trust/10 border border-trust/20 px-4 py-2 text-sm font-medium text-trust">
+            <Shield className="h-4 w-4 mr-2" />
+            Inversiones respaldadas por el gobierno mexicano
           </div>
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Invierte en tu futuro con{" "}
-            <span className="bg-gradient-to-r from-trust to-info bg-clip-text text-transparent">CETES</span>
+            <span className="bg-gradient-to-r from-trust to-accent bg-clip-text text-transparent">CETES</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto sm:text-xl">
             Accede a CETES, BONDDIA y UDIBONOS desde $100 pesos. Simple, seguro y con los mejores rendimientos del mercado.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/registro">
-              <Button size="lg" className="gap-2 bg-trust hover:bg-trust/90 text-trust-foreground">
+              <Button size="lg" className="gap-2 bg-trust hover:bg-accent text-trust-foreground shadow-lg shadow-trust/20 transition-all duration-300">
                 Comenzar ahora
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </Link>
             <Link href="#como-funciona">
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="border-trust/30 text-trust hover:bg-trust/5 hover:border-trust/50">
                 Ver cómo funciona
               </Button>
             </Link>
@@ -99,7 +97,7 @@ export default function HomePage() {
       </section>
 
       {/* Features */}
-      <section className="border-t bg-muted/30">
+      <section className="border-t border-trust/10 bg-muted/30">
         <div className="container mx-auto px-4 py-24">
           <div className="text-center mb-16">
             <h3 className="text-3xl font-bold tracking-tight mb-4">¿Por qué Cetesdirecto?</h3>
@@ -108,10 +106,10 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Card className="border-2 hover:border-trust/50 transition-colors">
+            <Card className="card-feature group">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-trust to-trust/60 flex items-center justify-center mb-2">
-                  <Shield className="h-6 w-6 text-trust-foreground" />
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-trust to-accent flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-trust/20 transition-shadow">
+                  <Shield className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-lg">100% Seguro</CardTitle>
               </CardHeader>
@@ -121,9 +119,9 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="border-2 hover:border-success/50 transition-colors">
+            <Card className="card-feature group">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-success to-success/60 flex items-center justify-center mb-2">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-success to-success/70 flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-success/20 transition-shadow">
                   <DollarSign className="h-6 w-6 text-success-foreground" />
                 </div>
                 <CardTitle className="text-lg">Desde $100 MXN</CardTitle>
@@ -134,10 +132,10 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="border-2 hover:border-info/50 transition-colors">
+            <Card className="card-feature group">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-info to-info/60 flex items-center justify-center mb-2">
-                  <TrendingUp className="h-6 w-6 text-info-foreground" />
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-trust to-accent flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-trust/20 transition-shadow">
+                  <TrendingUp className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-lg">Mejores Tasas</CardTitle>
               </CardHeader>
@@ -147,9 +145,9 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="border-2 hover:border-warning/50 transition-colors">
+            <Card className="card-feature group">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-warning to-warning/60 flex items-center justify-center mb-2">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-warning to-warning/70 flex items-center justify-center mb-2 group-hover:shadow-lg group-hover:shadow-warning/20 transition-shadow">
                   <Clock className="h-6 w-6 text-warning-foreground" />
                 </div>
                 <CardTitle className="text-lg">Sin Comisiones</CardTitle>
@@ -173,9 +171,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <Card>
+          <Card className="card-feature">
             <CardHeader>
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-trust to-info text-trust-foreground flex items-center justify-center font-bold text-2xl mb-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-trust to-accent text-white flex items-center justify-center font-bold text-2xl mb-4 shadow-lg shadow-trust/20">
                 1
               </div>
               <CardTitle className="text-xl">Regístrate</CardTitle>
@@ -186,9 +184,9 @@ export default function HomePage() {
               </CardDescription>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="card-feature">
             <CardHeader>
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-success to-success/70 text-success-foreground flex items-center justify-center font-bold text-2xl mb-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-trust to-accent text-white flex items-center justify-center font-bold text-2xl mb-4 shadow-lg shadow-trust/20">
                 2
               </div>
               <CardTitle className="text-xl">Elige tu inversión</CardTitle>
@@ -199,9 +197,9 @@ export default function HomePage() {
               </CardDescription>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="card-feature">
             <CardHeader>
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-info to-info/70 text-info-foreground flex items-center justify-center font-bold text-2xl mb-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-trust to-accent text-white flex items-center justify-center font-bold text-2xl mb-4 shadow-lg shadow-trust/20">
                 3
               </div>
               <CardTitle className="text-xl">Recibe rendimientos</CardTitle>
@@ -216,30 +214,36 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="border-t bg-gradient-to-br from-trust/10 to-info/10">
+      <section className="border-t border-trust/10 bg-gradient-to-br from-trust/5 via-accent/5 to-trust/10">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold tracking-tight mb-4">Respaldados por más de 2 millones de clientes</h3>
             <p className="text-muted-foreground">Únete a la comunidad de inversionistas más grande de México</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center border-2">
+            <Card className="text-center border-2 border-trust/20 hover:border-trust/40 transition-colors">
               <CardContent className="pt-8 pb-6">
-                <Users className="h-12 w-12 mx-auto mb-4 text-trust" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-trust to-accent flex items-center justify-center shadow-lg shadow-trust/20">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
                 <p className="text-4xl font-bold mb-2">{siteInfo.stats.clients}+</p>
                 <p className="text-sm text-muted-foreground">Clientes activos</p>
               </CardContent>
             </Card>
-            <Card className="text-center border-2">
+            <Card className="text-center border-2 border-success/20 hover:border-success/40 transition-colors">
               <CardContent className="pt-8 pb-6">
-                <DollarSign className="h-12 w-12 mx-auto mb-4 text-success" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-success to-success/70 flex items-center justify-center shadow-lg shadow-success/20">
+                  <DollarSign className="h-8 w-8 text-white" />
+                </div>
                 <p className="text-4xl font-bold mb-2">{siteInfo.stats.invested}</p>
                 <p className="text-sm text-muted-foreground">Pesos invertidos</p>
               </CardContent>
             </Card>
-            <Card className="text-center border-2">
+            <Card className="text-center border-2 border-trust/20 hover:border-trust/40 transition-colors">
               <CardContent className="pt-8 pb-6">
-                <Building2 className="h-12 w-12 mx-auto mb-4 text-info" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-trust to-accent flex items-center justify-center shadow-lg shadow-trust/20">
+                  <Building2 className="h-8 w-8 text-white" />
+                </div>
                 <p className="text-4xl font-bold mb-2">100%</p>
                 <p className="text-sm text-muted-foreground">Respaldo gubernamental</p>
               </CardContent>
@@ -257,7 +261,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <Card>
+          <Card className="card-feature border-t-4 border-t-trust">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center gap-4">
                 <div className="relative h-16 w-auto mb-2">
@@ -275,7 +279,7 @@ export default function HomePage() {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="card-feature border-t-4 border-t-trust">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center gap-4">
                 <div className="relative h-16 w-auto mb-2">
@@ -293,10 +297,12 @@ export default function HomePage() {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="card-feature border-t-4 border-t-trust">
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center gap-4">
-                <Shield className="h-16 w-16 text-trust mb-2" />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-trust to-accent flex items-center justify-center shadow-lg shadow-trust/20 mb-2">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
                 <p className="text-sm text-muted-foreground">
                   Al invertir tus recursos con Cetesdirecto, tienes acceso directo a los títulos colocados en las subastas primarias del Banco de México.
                 </p>
@@ -307,7 +313,7 @@ export default function HomePage() {
       </section>
 
       {/* Requirements */}
-      <section className="border-t bg-muted/30">
+      <section className="border-t border-trust/10 bg-muted/30">
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
@@ -316,19 +322,21 @@ export default function HomePage() {
                 Abre tu cuenta en línea, sólo necesitas:
               </p>
             </div>
-            <Card>
+            <Card className="border-t-4 border-t-trust shadow-lg shadow-trust/5">
               <CardContent className="pt-6">
                 <ul className="space-y-4">
                   {siteInfo.requirements.map((req, i) => (
                     <li key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-success shrink-0" />
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-trust to-accent flex items-center justify-center">
+                        <CheckCircle2 className="h-4 w-4 text-white" />
+                      </div>
                       <span>{req}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-8 text-center">
                   <Link href="/registro">
-                    <Button size="lg" className="gap-2">
+                    <Button size="lg" className="gap-2 bg-trust hover:bg-accent text-white shadow-lg shadow-trust/20 transition-all duration-300">
                       Abrir cuenta ahora
                       <ArrowRight className="h-5 w-5" />
                     </Button>

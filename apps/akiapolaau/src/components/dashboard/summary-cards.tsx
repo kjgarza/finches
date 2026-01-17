@@ -46,11 +46,17 @@ const cards: SummaryCard[] = [
 export function SummaryCards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
-      {cards.map((card) => (
-        <Card key={card.label}>
+      {cards.map((card, index) => (
+        <Card key={card.label} className="border-t-2 border-t-trust/30 hover:border-t-trust transition-colors">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-3">
-              <div className="rounded-lg bg-primary/10 p-2 text-primary">
+              <div className={`rounded-lg p-2 text-white ${
+                index === 0 || index === 2 || index === 4
+                  ? "bg-gradient-to-br from-trust to-accent"
+                  : index === 1
+                  ? "bg-gradient-to-br from-success to-success/70"
+                  : "bg-gradient-to-br from-trust/80 to-accent/80"
+              }`}>
                 {card.icon}
               </div>
             </div>

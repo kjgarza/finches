@@ -43,10 +43,10 @@ export default function DashboardLayout({
   ]
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full bg-card border-r border-border">
-      <div className="p-6 border-b border-border">
+    <div className="flex flex-col h-full bg-gradient-to-b from-[hsl(343,71%,22%)] via-trust to-[hsl(340,60%,32%)] text-white">
+      <div className="p-6 border-b border-white/10">
         <Link href="/">
-          <h1 className="text-2xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity">Cetesdirecto</h1>
+          <h1 className="text-2xl font-bold text-white cursor-pointer hover:opacity-80 transition-opacity">Cetesdirecto</h1>
         </Link>
       </div>
 
@@ -61,9 +61,9 @@ export default function DashboardLayout({
               onClick={() => setMobileMenuOpen(false)}
               className={cn(
                 "flex items-center gap-3 px-4 py-3 rounded-lg motion-safe:transition-colors motion-reduce:transition-none",
-                isActive 
-                  ? "bg-primary text-primary-foreground font-medium shadow-sm" 
-                  : "text-foreground hover:bg-muted"
+                isActive
+                  ? "bg-white/20 text-white font-medium shadow-sm"
+                  : "text-white/80 hover:bg-white/10 hover:text-white"
               )}
             >
               <Icon className="h-5 w-5 shrink-0" />
@@ -72,6 +72,12 @@ export default function DashboardLayout({
           )
         })}
       </nav>
+
+      {/* Government seal footer */}
+      <div className="p-4 border-t border-white/10 text-center">
+        <p className="text-xs text-white/60">Gobierno de México</p>
+        <p className="text-xs text-white/40 mt-1">SHCP • NAFIN</p>
+      </div>
     </div>
   )
 
@@ -83,20 +89,20 @@ export default function DashboardLayout({
       </aside>
 
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 h-16 border-b bg-background z-50">
+      <header className="lg:hidden fixed top-0 left-0 right-0 h-16 border-b border-trust/20 bg-background z-50">
         <div className="flex items-center justify-between h-full px-4">
           <Link href="/">
-            <h1 className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity">Cetesdirecto</h1>
+            <h1 className="text-xl font-bold text-trust cursor-pointer hover:opacity-80 transition-opacity">Cetesdirecto</h1>
           </Link>
           <div className="flex items-center gap-2">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" className="text-trust hover:bg-trust/10">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Abrir menú</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-64 p-0 bg-background">
+              <SheetContent side="left" className="w-64 p-0 bg-gradient-to-b from-[hsl(343,71%,22%)] via-trust to-[hsl(340,60%,32%)] border-trust">
                 <VisuallyHidden>
                   <SheetTitle>Menú de navegación</SheetTitle>
                 </VisuallyHidden>
@@ -110,21 +116,21 @@ export default function DashboardLayout({
       {/* Main Content Area */}
       <div className="flex-1 lg:pl-64 w-full">
         {/* Top Header Bar */}
-        <header className="fixed top-0 right-0 lg:left-64 left-0 h-16 border-b bg-background z-40">
+        <header className="fixed top-0 right-0 lg:left-64 left-0 h-16 border-b border-trust/10 bg-background z-40">
           <div className="flex items-center justify-between h-full px-4 lg:px-6">
             <div className="flex items-center gap-4 ml-auto">
-              <Button variant="ghost" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="relative hover:bg-trust/10">
                 <Bell className="h-5 w-5" />
-                <span className="absolute top-1 right-1 h-2 w-2 bg-destructive rounded-full" />
+                <span className="absolute top-1 right-1 h-2 w-2 bg-trust rounded-full" />
                 <span className="sr-only">Notificaciones</span>
               </Button>
               <div className="flex items-center gap-3">
                 <Avatar className="h-8 w-8">
-                  <AvatarFallback className="bg-primary text-primary-foreground text-xs">JP</AvatarFallback>
+                  <AvatarFallback className="bg-trust text-white text-xs">JP</AvatarFallback>
                 </Avatar>
                 <span className="hidden md:block text-sm font-medium">Juan Pérez</span>
               </div>
-              <Button className="gap-2" asChild>
+              <Button className="gap-2 bg-trust hover:bg-accent text-white shadow-md shadow-trust/20" asChild>
                 <Link href="/dashboard/nueva-inversion" aria-label="Nueva Inversión">
                   <Plus className="h-4 w-4" />
                   <span className="hidden sm:inline lg:hidden">Nueva</span>
