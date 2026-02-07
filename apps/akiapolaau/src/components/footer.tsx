@@ -49,7 +49,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="border-t border-trust/10 mt-4 pt-4 text-center text-xs text-muted-foreground">
           <p>© 2026 Kristian Garza. Todos los derechos reservados.</p>
-          <p className="mt-1">Inversiones sujetas a regulaciones financieras mexicanas • CNBV</p>
+          <p className="mt-1">Esta es una aplicación de demostración creada con fines de prueba de concepto. No está afiliada con Cetes Directo, la Secretaría de Hacienda, ni Nacional Financiera.</p>
         </div>
       </div>
     </footer>
