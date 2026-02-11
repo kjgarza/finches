@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@repo/ui"
 import { InstallPWAPrompt } from "@/components/install-pwa-prompt"
 import { PWARegister } from "@/components/pwa-register"
+import { GoogleAnalytics } from "@repo/utils/analytics"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -78,6 +79,9 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${sourceSans.variable} ${playfair.variable} font-sans`} suppressHydrationWarning>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
