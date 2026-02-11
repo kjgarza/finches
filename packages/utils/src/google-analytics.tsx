@@ -11,6 +11,16 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
     return null
   }
 
+  // Validate GA ID format to prevent XSS
+  const GA_ID_PATTERN = /^G-[A-Z0-9]+$|^UA-[0-9]+-[0-9]+$/
+  if (!GA_ID_PATTERN.test(gaId)) {
+    console.warn(`Invalid Google Analytics ID format: ${gaId}`)
+    return null
+  }
+
+  // Use JSON.stringify to safely escape the gaId value
+  const safeGaId = JSON.stringify(gaId)
+
   return (
     <>
       <Script
@@ -25,7 +35,7 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gaId}');
+            gtag('config', ${safeGaId});
           `,
         }}
       />

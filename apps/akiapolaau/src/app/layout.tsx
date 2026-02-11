@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@repo/ui"
 import { InstallPWAPrompt } from "@/components/install-pwa-prompt"
 import { PWARegister } from "@/components/pwa-register"
-import { GoogleAnalytics } from "@repo/utils"
+import { GoogleAnalytics } from "@repo/utils/analytics"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],

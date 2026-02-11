@@ -45,10 +45,11 @@ To use a different tracking ID:
 
 The implementation follows the principle of separation of concerns:
 
-1. **Data Layer** (`@repo/utils/google-analytics.tsx`)
+1. **Data Layer** (`packages/utils/src/google-analytics.tsx`)
    - Manages the `window.dataLayer` array
    - Initializes gtag function
    - Configures tracking with the provided GA ID
+   - Validates GA ID format to prevent XSS attacks
 
 2. **Structure** (App layouts)
    - Conditionally renders the GoogleAnalytics component
@@ -81,7 +82,7 @@ The GoogleAnalytics component is automatically included in:
 
 Example usage:
 ```tsx
-import { GoogleAnalytics } from '@repo/utils';
+import { GoogleAnalytics } from '@repo/utils/analytics';
 
 export default function RootLayout({ children }) {
   return (
