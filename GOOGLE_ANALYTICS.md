@@ -5,7 +5,7 @@ This monorepo includes Google Analytics tracking across all applications followi
 ## Overview
 
 Google Analytics is implemented using:
-- **Google Tag Manager (gtag.js)** - The official Google Analytics library
+- **Google Analytics (gtag.js)** - The Global Site Tag library for Google Analytics
 - **Next.js Script component** - For optimal loading performance with `afterInteractive` strategy
 - **Environment variables** - For secure configuration management
 - **Reusable component** - Shared across all apps via `@repo/utils` package
@@ -151,4 +151,4 @@ const handleClick = () => {
 
 - [Next.js Script Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/scripts)
 - [Google Analytics for Web](https://developers.google.com/analytics/devguides/collection/gtagjs)
-- [Google Tag Manager](https://developers.google.com/tag-platform/gtagjs)
+- [Google Analytics gtag.js Reference](https://developers.google.com/tag-platform/gtagjs)
